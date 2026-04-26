@@ -1,146 +1,340 @@
-import React from 'react';
-import { Cpu, Server, Network, Lock, Database, Code } from 'lucide-react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import { ExternalLink, Lock, Eye, Shield } from 'lucide-react';
+import SectionHeading from '../components/SectionHeading';
 
-function Technology() {
+export default function Technology() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
-      <Navbar />
-
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80')] bg-cover bg-fixed opacity-10"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/30 to-purple-900/30 mix-blend-multiply"></div>
+    <div className="max-w-5xl mx-auto px-4 space-y-24">
+      {/* HEADER */}
+      <section className="pt-8 space-y-6 text-center">
+        <div className="mono text-[10px] tracking-[0.3em] uppercase text-neon-blue/80 inline-flex items-center gap-2">
+          <span className="neon-dot h-1.5 w-1.5" />
+          Technology
         </div>
-        <div className="container mx-auto px-4 relative">
-          <h1 className="text-5xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent text-center">
-            Our Technology
-          </h1>
-          <p className="text-xl text-gray-300 text-center max-w-3xl mx-auto">
-            Discover the cutting-edge technology powering Navio's next-generation blockchain platform.
-          </p>
-          <div className="mt-8 max-w-2xl mx-auto">
-            <div className="bg-blue-500/10 p-6 rounded-xl border border-blue-500/20 text-center">
-              <p className="text-blue-200">
-                <span className="font-semibold">Token Distribution:</span> As we transition to the new Navio blockchain, existing Navcoin holders will receive Navio tokens at a 1:1 ratio. Detailed distribution mechanics and timeline will be announced soon.
-              </p>
-            </div>
-          </div>
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold leading-tight">
+          <span className="gradient-text">The cryptography under the hood.</span>
+        </h1>
+        <p className="text-white/60 max-w-2xl mx-auto text-lg">
+          Navio combines decades of research into a single coherent base layer. Here's what each
+          piece does, why it matters, and how they fit together — explained in plain language, with
+          links to the real specs for when you want the math.
+        </p>
+        <div className="pt-2">
+          <a href="https://docs.nav.io" target="_blank" rel="noreferrer" className="neon-btn">
+            Full spec on docs.nav.io <ExternalLink className="w-4 h-4" />
+          </a>
         </div>
       </section>
 
-      {/* Architecture Overview */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+      {/* BLSCT */}
+      <section id="blsct">
+        <SectionHeading
+          eyebrow="01 — Privacy layer"
+          title={<>BLSCT: how Navio hides what it hides</>}
+          center={false}
+          gradient="blue"
+        />
+        <div className="mt-10 grid md:grid-cols-3 gap-5">
+          <Tile icon={<Lock className="w-5 h-5" />} title="Pedersen commitments">
+            Every amount is hidden inside a cryptographic commitment. Balances can be verified
+            (inputs equal outputs) without revealing the numbers themselves.
+          </Tile>
+          <Tile icon={<Eye className="w-5 h-5" />} title="Stealth addresses (DPKs)">
+            Each payment generates a fresh one-time destination from the recipient's double public
+            key. Two payments to the same person look unlinkable to anyone but them.
+          </Tile>
+          <Tile icon={<Shield className="w-5 h-5" />} title="Bulletproofs++ range proofs">
+            Short, non-interactive proofs that committed amounts are within a valid range — so
+            nobody can conjure negative coins. No trusted setup required.
+          </Tile>
+        </div>
+
+        <div className="glow-card mt-8 space-y-4">
+          <h3 className="text-xl font-semibold text-white">What an observer sees vs. what they don't</h3>
+          <div className="grid md:grid-cols-2 gap-6 text-sm">
             <div>
-              <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                Architecture Overview
-              </h2>
-              <p className="text-gray-400 mb-8">
-                Navio's architecture is built on four fundamental pillars: security, scalability, privacy, and interoperability. Our unique approach combines cutting-edge cryptography with innovative consensus mechanisms.
+              <div className="mono text-[10px] tracking-[0.22em] uppercase text-neon-green/80 mb-2">Public</div>
+              <ul className="space-y-1.5 text-white/70">
+                <li>— Block height and timestamp</li>
+                <li>— Number of transactions</li>
+                <li>— Number of inputs and outputs</li>
+                <li>— Transaction fee (burned)</li>
+                <li>— Script type</li>
+                <li>— Token ID for typed assets</li>
+              </ul>
+            </div>
+            <div>
+              <div className="mono text-[10px] tracking-[0.22em] uppercase text-neon-pink/80 mb-2">Hidden</div>
+              <ul className="space-y-1.5 text-white/70">
+                <li>— Sender and receiver addresses</li>
+                <li>— Amount of every output</li>
+                <li>— Linkage between addresses</li>
+                <li>— Balances of any wallet</li>
+                <li>— Relationships between inputs and outputs</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="glow-card mt-6">
+          <h3 className="text-lg font-semibold text-white mb-3">Why base-layer, not opt-in</h3>
+          <p className="text-sm text-white/70 leading-relaxed">
+            Opt-in privacy (Zcash-style shielded pools, Bitcoin CoinJoin) produces a two-tier
+            blockchain: people who need privacy stand out, and a small anonymity set is easier to
+            deanonymize. Navio enforces privacy for every transaction on the canonical chain — so
+            the anonymity set of any transaction is every other transaction in the same block, and
+            privacy isn't a suspicious signal.
+          </p>
+        </div>
+      </section>
+
+      {/* POPS */}
+      <section id="pops">
+        <SectionHeading
+          eyebrow="02 — Consensus"
+          title={<>Proof-of-Private-Stake, in plain English</>}
+          center={false}
+          gradient="pink"
+        />
+        <div className="mt-10 space-y-6">
+          <div className="glow-card">
+            <p className="text-white/75 leading-relaxed">
+              Ordinary Proof-of-Stake publishes the validator's address and the staked amount in the
+              clear. Anyone can see who is producing blocks, and for how much. That's a privacy
+              violation <em>and</em> a surveillance opportunity — for regulators, chain-analysis
+              firms, and anyone with subpoena power.
+            </p>
+            <p className="text-white/75 leading-relaxed mt-3">
+              Navio's <strong className="text-white">Proof-of-Private-Stake (PoPS)</strong> keeps the
+              economic security of PoS, but validators prove eligibility in zero-knowledge — without
+              ever revealing <em>who</em> they are or <em>how much</em> they've staked.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-5">
+            <Step n="01" accent="blue" title="Lock stake">
+              A staker locks at least 10,000 NAV. The output enters a set of candidate commitments;
+              the amount itself is hidden inside a Pedersen commitment.
+            </Step>
+            <Step n="02" accent="purple" title="Prove eligibility">
+              Each block, the staker proves (a) they control <em>some</em> output in the set, (b) the
+              hidden amount meets threshold, (c) the proof is bound to this specific block — all in
+              zero-knowledge.
+            </Step>
+            <Step n="03" accent="pink" title="Produce block">
+              The network verifies the proof. Block is accepted. Reward goes to the staker's stealth
+              address. Nobody — including other stakers — can tell which candidate just produced the
+              block.
+            </Step>
+          </div>
+
+        </div>
+      </section>
+
+      {/* TOKENS */}
+      <section id="tokens">
+        <SectionHeading
+          eyebrow="03 — Assets"
+          title={<>Private tokens and NFTs</>}
+          center={false}
+          gradient="green"
+        />
+        <div className="mt-8 glow-card space-y-5">
+          <p className="text-white/75 leading-relaxed">
+            Navio lets anyone launch their own coin — a stablecoin, a community token, a game
+            currency — or mint NFTs. Same privacy guarantees as NAV itself: amounts hidden,
+            balances hidden, who sent what to whom hidden.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-5">
+            <div className="border border-white/10 rounded-xl p-5 bg-white/[0.02]">
+              <h4 className="font-semibold text-white mb-2">Your own coin</h4>
+              <p className="text-sm text-white/65 leading-relaxed">
+                Launch a token once — the chain knows it exists, and that only you can print more
+                of it. After that, every transfer of that token is private: people see that "some
+                token X moved," but not who owned it, who got it, or how much they got.
               </p>
-              <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <Server className="w-6 h-6 text-blue-400" />
-                  <span>Distributed node network</span>
-                </div>
-                <div className="flex items-center gap-4">
-                  <Database className="w-6 h-6 text-blue-400" />
-                  <span>Sharded database architecture</span>
-                </div>
-                <div className="flex items-center gap-4">
-                  <Code className="w-6 h-6 text-blue-400" />
-                  <span>Smart contract optimization</span>
-                </div>
-              </div>
             </div>
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl blur-xl"></div>
-              <div className="relative bg-gray-800/50 p-8 rounded-xl border border-gray-700">
-                <img 
-                  src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80" 
-                  alt="Technology Architecture"
-                  className="rounded-lg w-full"
-                />
-              </div>
+            <div className="border border-white/10 rounded-xl p-5 bg-white/[0.02]">
+              <h4 className="font-semibold text-white mb-2">Your own NFTs</h4>
+              <p className="text-sm text-white/65 leading-relaxed">
+                Mint a collection. Each piece has its own identity, and you can prove you own it —
+                but the world doesn't see your wallet of rare items. Collectors stay private;
+                artwork stays verifiable.
+              </p>
             </div>
+          </div>
+
+          <p className="text-sm text-white/55 border-l-2 border-neon-blue/50 pl-4 italic leading-relaxed">
+            One thing that is public: the token's name. The chain needs to know "this is coin X"
+            so balances can't secretly turn into coin Y. But who holds it, how much, and where it
+            flows — those stay yours.
+          </p>
+        </div>
+      </section>
+
+      {/* SWAPS */}
+      <section id="swaps">
+        <SectionHeading
+          eyebrow="04 — Trading"
+          title={<>Atomic swaps, two ways</>}
+          center={false}
+          gradient="blue"
+        />
+        <div className="mt-8 grid md:grid-cols-2 gap-5">
+          <div className="glow-card">
+            <div className="mono text-[10px] tracking-[0.22em] uppercase text-neon-blue/80 mb-2">
+              Intra-chain · aggregated
+            </div>
+            <h3 className="text-lg font-semibold text-white mb-3">Native Navio swaps</h3>
+            <p className="text-sm text-white/70 leading-relaxed">
+              BLS signature aggregation lets Alice and Bob each construct "half" of a transaction:
+              Alice spends 100 TokenA, creates a 10 NAV output for herself; Bob spends 10 NAV,
+              creates 100 TokenA for himself. Signatures aggregate. The combined transaction
+              balances and broadcasts as one atomic unit. No HTLCs, no preimages, no race.
+            </p>
+          </div>
+          <div className="glow-card">
+            <div className="mono text-[10px] tracking-[0.22em] uppercase text-neon-pink/80 mb-2">
+              Cross-chain · HTLC
+            </div>
+            <h3 className="text-lg font-semibold text-white mb-3">BTC / LTC swaps</h3>
+            <p className="text-sm text-white/70 leading-relaxed">
+              For chains outside Navio, traditional hash-time-locked contracts work: Navio's
+              scripting includes <code className="mono text-neon-blue text-xs">OP_BLSCHECKSIG</code> and standard
+              <code className="mono text-neon-blue text-xs"> OP_CHECKLOCKTIMEVERIFY</code>, enabling trustless
+              atomic swaps against Bitcoin, Litecoin, and anything else that speaks Bitcoin Script.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Technical Stack */}
-      <section className="py-20 bg-black/50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">
-            Technical Stack
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-b from-gray-800/50 to-gray-900/50 p-8 rounded-xl border border-gray-800">
-              <h3 className="text-xl font-semibold mb-4">Consensus Layer</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li>• Proof of Stake (PoS)</li>
-                <li>• Byzantine Fault Tolerance</li>
-                <li>• Validator Network</li>
-              </ul>
-            </div>
-            <div className="bg-gradient-to-b from-gray-800/50 to-gray-900/50 p-8 rounded-xl border border-gray-800">
-              <h3 className="text-xl font-semibold mb-4">Execution Layer</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li>• WebAssembly Runtime</li>
-                <li>• Smart Contract Engine</li>
-                <li>• State Management</li>
-              </ul>
-            </div>
-            <div className="bg-gradient-to-b from-gray-800/50 to-gray-900/50 p-8 rounded-xl border border-gray-800">
-              <h3 className="text-xl font-semibold mb-4">Network Layer</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li>• P2P Protocol</li>
-                <li>• Sharding</li>
-                <li>• Cross-Chain Bridge</li>
-              </ul>
-            </div>
-          </div>
+      {/* NETWORK PARAMS */}
+      <section id="params">
+        <SectionHeading
+          eyebrow="05 — Network"
+          title={<>Concrete numbers</>}
+          center={false}
+          gradient="pink"
+        />
+        <div className="mt-10 space-y-10">
+          <ParamGroup label="Supply">
+            <Metric label="Initial supply" value="81,743,678" unit="NAV" big />
+            <Metric label="Max supply" value="∞" unit="uncapped" big />
+            <Metric label="Minimum stake" value="10,000" unit="NAV" big />
+          </ParamGroup>
+
+          <ParamGroup label="Consensus">
+            <Metric label="Block time" value="120" unit="sec" />
+            <Metric label="Block reward" value="8" unit="NAV" />
+            <Metric label="Retarget" value="30" unit="blocks" />
+            <Metric label="Max block size" value="4" unit="MB" />
+          </ParamGroup>
+
+          <ParamGroup label="Network">
+            <Metric label="P2P port" value="48470" />
+            <Metric label="RPC port" value="48471" />
+            <Metric label="Address prefix" value="nav" />
+            <Metric label="Fees" value="burned" />
+          </ParamGroup>
+
+          <ParamGroup label="Cryptography">
+            <Metric label="Curve" value="BLS12-381" />
+            <Metric label="Range-proof width" value="[0, 2⁶⁴)" />
+            <Metric label="Privacy scheme" value="BLSCT" />
+            <Metric label="Consensus" value="PoPS" />
+          </ParamGroup>
         </div>
       </section>
 
-      {/* Research Papers */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16">Research Papers</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                title: "Zero-Knowledge Proofs in Blockchain",
-                authors: "Dr. Sarah Chen, Dr. Michael Rodriguez",
-                date: "2024",
-                link: "#"
-              },
-              {
-                title: "Post-Quantum Cryptography Implementation",
-                authors: "Dr. James Wilson, Dr. Emily Chang",
-                date: "2024",
-                link: "#"
-              }
-            ].map((paper, index) => (
-              <div key={index} className="bg-gray-800/30 p-6 rounded-xl hover:bg-gray-800/50 transition-all">
-                <h3 className="text-xl font-semibold mb-2">{paper.title}</h3>
-                <p className="text-gray-400 mb-2">{paper.authors}</p>
-                <p className="text-gray-500 mb-4">{paper.date}</p>
-                <a href={paper.link} className="text-blue-400 hover:text-blue-300 transition-colors">
-                  Read Paper →
-                </a>
-              </div>
-            ))}
+      {/* CTA */}
+      <section className="text-center pb-8">
+        <div className="glow-card gradient-border">
+          <h2 className="text-2xl sm:text-3xl font-semibold gradient-text mb-4">Go deeper.</h2>
+          <p className="text-white/65 mb-6 max-w-xl mx-auto">
+            Everything above is a summary. The developer docs carry the full cryptographic spec,
+            RPC reference, SDK guides, and node operator instructions.
+          </p>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <a href="https://docs.nav.io" target="_blank" rel="noreferrer" className="neon-btn">
+              docs.nav.io <ExternalLink className="w-4 h-4" />
+            </a>
+            <a href="https://github.com/nav-io/navio-core" target="_blank" rel="noreferrer" className="ghost-btn">
+              navio-core source <ExternalLink className="w-3 h-3" />
+            </a>
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 }
 
-export default Technology;
+function ParamGroup({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <div>
+      <div className="flex items-center gap-3 mb-4">
+        <span className="neon-dot h-1.5 w-1.5" />
+        <span className="mono text-[10px] tracking-[0.3em] uppercase text-white/40">{label}</span>
+        <div className="flex-1 h-px bg-white/5" />
+      </div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">{children}</div>
+    </div>
+  );
+}
+
+function Metric({
+  label,
+  value,
+  unit,
+  big = false,
+}: {
+  label: string;
+  value: string;
+  unit?: string;
+  big?: boolean;
+}) {
+  return (
+    <div className="relative border border-white/10 rounded-xl p-5 bg-white/[0.02] hover:border-neon-blue/40 hover:bg-white/[0.04] transition-all group overflow-hidden">
+      <div className="absolute top-2 right-2 w-1 h-1 rounded-full bg-neon-blue/40 group-hover:bg-neon-blue transition" />
+      <div className="mono text-[9px] tracking-[0.22em] uppercase text-white/40 mb-3">
+        {label}
+      </div>
+      <div className="flex items-baseline gap-1.5">
+        <div className={`mono ${big ? 'text-2xl sm:text-3xl gradient-text' : 'text-xl text-white'} leading-none`}>
+          {value}
+        </div>
+        {unit && (
+          <div className="mono text-[10px] tracking-[0.15em] uppercase text-white/40">{unit}</div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function Tile({ icon, title, children }: { icon: React.ReactNode; title: string; children: React.ReactNode }) {
+  return (
+    <div className="glow-card">
+      <div className="w-10 h-10 rounded-lg border border-white/10 bg-white/[0.03] flex items-center justify-center text-neon-blue mb-4">
+        {icon}
+      </div>
+      <h3 className="text-base font-semibold text-white mb-2">{title}</h3>
+      <p className="text-sm text-white/65 leading-relaxed">{children}</p>
+    </div>
+  );
+}
+
+function Step({
+  n, title, children, accent,
+}: { n: string; title: string; children: React.ReactNode; accent: 'blue' | 'purple' | 'pink' }) {
+  const colors = {
+    blue: 'text-neon-blue/80',
+    purple: 'text-neon-purple/80',
+    pink: 'text-neon-pink/80',
+  };
+  return (
+    <div className="glow-card">
+      <div className={`mono text-[10px] tracking-[0.3em] uppercase ${colors[accent]} mb-2`}>Step {n}</div>
+      <h3 className="text-base font-semibold text-white mb-2">{title}</h3>
+      <p className="text-sm text-white/65 leading-relaxed">{children}</p>
+    </div>
+  );
+}
