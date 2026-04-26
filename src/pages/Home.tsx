@@ -162,12 +162,16 @@ export default function Home() {
             <div className="p-7 space-y-3">
               <h3 className="text-2xl font-semibold gradient-text-pink">Interoperability & DeFi</h3>
               <p className="text-sm text-white/65 leading-relaxed">
-                Bring tokens from Ethereum, Bitcoin, Litecoin, and other chains onto Navio using
-                atomic swaps — and watch them inherit confidentiality. Your trades become private
-                without leaving crypto.
+                The protocol includes atomic-swap primitives and BLSCT aggregation — the
+                groundwork for trustless swaps with Bitcoin, Litecoin, and compatible chains.
+                Cross-chain bridges for other tokens aren't live yet; they're on the roadmap.
+              </p>
+              <p className="text-sm text-white/65 leading-relaxed">
+                Today the bridge handles the Navcoin → Navio migration during the mainnet swap
+                window.
               </p>
               <a href="https://bridge.nav.io" target="_blank" rel="noreferrer" className="ghost-btn text-xs mt-2">
-                Use the bridge <ExternalLink className="w-3 h-3" />
+                Navcoin → Navio bridge <ExternalLink className="w-3 h-3" />
               </a>
             </div>
           </div>
@@ -186,10 +190,6 @@ export default function Home() {
                 that the stake is eligible, and that the proof is bound to this block — without
                 revealing <em>which</em> output they control or <em>how much</em> is staked.
               </p>
-              <p className="text-sm text-white/65 leading-relaxed">
-                10,000 NAV minimum. 2-minute blocks on mainnet. Coins lock for an epoch, then
-                unlock freely. No pools required. No KYC. No validator doxxing.
-              </p>
             </div>
           </div>
           <div className="glow-card overflow-hidden p-0">
@@ -200,9 +200,6 @@ export default function Home() {
                 Navio is maintained by a distributed community of contributors — no foundation,
                 no central company, no token-sale investors with veto power. Rules live in code.
                 Changes ship when the community agrees on them.
-              </p>
-              <p className="text-sm text-white/65 leading-relaxed">
-                Our strength is the community. Most of us have been here since 2014.
               </p>
             </div>
           </div>
