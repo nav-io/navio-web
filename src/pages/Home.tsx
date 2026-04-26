@@ -110,7 +110,7 @@ export default function Home() {
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           <FeatureCard icon={<Shield className="w-5 h-5" />} title="NAV — Private Coin" accent="blue">
             NAV is the native asset. Every send hides the amount, the sender, the receiver, and the
-            token type. Confirmations in one minute, fees in fractions of a cent.
+            token type. Confirmations in two minutes, fees in fractions of a cent.
           </FeatureCard>
           <FeatureCard icon={<Lock className="w-5 h-5" />} title="BLSCT Protocol" accent="purple">
             Navio's privacy engine: Pedersen commitments for amounts, stealth addresses via double
@@ -311,7 +311,7 @@ export default function Home() {
             status="done"
             title="PoPS testnet — Phase 1"
             date="July 2024"
-            body="First network in the world running Proof-of-Private-Stake, producing stable 1-minute testnet blocks."
+            body="First network in the world running Proof-of-Private-Stake, producing stable testnet blocks."
           />
           <Milestone
             status="done"

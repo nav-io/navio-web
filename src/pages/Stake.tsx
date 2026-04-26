@@ -36,7 +36,7 @@ export default function Stake() {
             200 GB NVMe SSD, unpruned. Random I/O matters more than raw size during sync.
           </Spec>
           <Spec icon={<Wifi className="w-5 h-5" />} label="Network">
-            100 Mbps symmetric with low jitter. 1-minute blocks mean late propagation = missed
+            100 Mbps symmetric with low jitter. 2-minute blocks mean late propagation = missed
             reward.
           </Spec>
           <Spec icon={<Terminal className="w-5 h-5" />} label="OS & time">
@@ -174,7 +174,7 @@ sudo make install  # optional`}
             <div className="text-3xl font-semibold gradient-text mb-1">8 NAV</div>
             <p className="text-xs text-white/55 leading-relaxed mt-2">
               Mainnet subsidy paid to a fresh stealth address owned by your staking sub-account. No
-              validator identity is ever revealed on-chain. (Testnet: 4 NAV.)
+              validator identity is ever revealed on-chain.
             </p>
           </div>
           <div className="glow-card">
@@ -185,7 +185,7 @@ sudo make install  # optional`}
             <div className="text-3xl font-semibold gradient-text mb-1">120 sec</div>
             <p className="text-xs text-white/55 leading-relaxed mt-2">
               720 blocks per day on mainnet. Your share depends on the total staked supply relative
-              to your locked amount. (Testnet runs at 60 sec.)
+              to your locked amount.
             </p>
           </div>
           <div className="glow-card">
