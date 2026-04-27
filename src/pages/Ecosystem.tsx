@@ -39,7 +39,7 @@ export default function Ecosystem() {
           />
           <WalletCard
             name="Navio X"
-            desc="Experimental cross-platform desktop wallet. Electron app, tighter UX for everyday users. Not production-ready yet — useful for testing."
+            desc="Cross-platform desktop wallet. Electron app, tighter UX for everyday users. Available on macOS, Windows, and Linux."
             tags={['Desktop', 'Electron', 'Beta']}
             links={[
               { label: 'Website', href: 'https://navio-x.github.io/' },
@@ -48,7 +48,7 @@ export default function Ecosystem() {
           />
           <WalletCard
             name="Navio SDK"
-            desc="TypeScript SDK for building browser and Node.js wallets. Key management, transaction construction, view-key audit wallets, everything a wallet author needs."
+            desc="TypeScript SDK for building browser and Node.js wallets. Key management, transaction construction, view-key audit wallets, everything a builder needs."
             tags={['TypeScript', 'Browser', 'Node']}
             links={[
               { label: 'Docs', href: 'https://docs.nav.io/sdk' },
@@ -57,7 +57,7 @@ export default function Ecosystem() {
           />
           <WalletCard
             name="libblsct bindings"
-            desc="Native BLSCT primitives for integrators — TypeScript native/WASM today, Python shipping, C / Rust / Go on the roadmap. For when you need the cryptography one level lower than the SDK."
+            desc="Native BLSCT primitives for integrators — TypeScript native/WASM, Python; C / Rust / Go on the roadmap. For lower level building."
             tags={['Native', 'WASM', 'Python']}
             links={[
               { label: 'Docs', href: 'https://docs.nav.io/blsct-lib' },
@@ -84,7 +84,7 @@ export default function Ecosystem() {
           <AppCard
             title="Bridge"
             url="https://bridge.nav.io"
-            desc="Migrate legacy Navcoin NAV to native NAVIO during the swap window. Or wrap/unwrap assets between chains once mainnet is live."
+            desc="Migrate legacy Navcoin NAV to native NAVIO during the swap window."
           />
           <AppCard
             title="Developer Docs"
@@ -122,8 +122,7 @@ export default function Ecosystem() {
           <p className="text-sm text-white/65 leading-relaxed">
             Mainnet activates at Navcoin block height <span className="mono text-neon-blue">10,500,000</span>{' '}
             (estimated end of June / beginning of July 2026). Initial supply is <span className="mono text-neon-blue">81,743,678 NAV</span>,
-            migrated 1:1 from the Navcoin chain. The historical community fund balance is burned at
-            genesis.
+            migrated 1:1 from the Navcoin chain.
           </p>
         </div>
       </section>

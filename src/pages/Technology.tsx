@@ -1,4 +1,4 @@
-import { ExternalLink, Lock, Eye, Shield } from 'lucide-react';
+import { ExternalLink, Lock, Eye, Shield, Combine } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
 
 export default function Technology() {
@@ -14,7 +14,7 @@ export default function Technology() {
           <span className="gradient-text">The cryptography under the hood.</span>
         </h1>
         <p className="text-white/60 max-w-2xl mx-auto text-lg">
-          Navio combines decades of research into a single coherent base layer. Here's what each
+          Navio combines years of research and development into a single coherent base layer. Here's what each
           piece does, why it matters, and how they fit together — explained in plain language, with
           links to the real specs for when you want the math.
         </p>
@@ -33,7 +33,7 @@ export default function Technology() {
           center={false}
           gradient="blue"
         />
-        <div className="mt-10 grid md:grid-cols-3 gap-5">
+        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           <Tile icon={<Lock className="w-5 h-5" />} title="Pedersen commitments">
             Every amount is hidden inside a cryptographic commitment. Balances can be verified
             (inputs equal outputs) without revealing the numbers themselves.
@@ -43,8 +43,15 @@ export default function Technology() {
             key. Two payments to the same person look unlinkable to anyone but them.
           </Tile>
           <Tile icon={<Shield className="w-5 h-5" />} title="Bulletproofs++ range proofs">
-            Short, non-interactive proofs that committed amounts are within a valid range — so
-            nobody can conjure negative coins. No trusted setup required.
+            Short, non-interactive proofs that committed amounts are within a valid range, so
+            nobody can print coins out of thin air. No trusted setup required.
+          </Tile>
+          <Tile icon={<Combine className="w-5 h-5" />} title="BLS signature & transaction aggregation">
+            The "BLS" in BLSCT. Independent signatures combine into a single short one, which keeps
+            transactions compact and lets two parties co-sign an atomic swap as one balanced
+            transaction. The same property aggregates separate transactions at the block level, so
+            an observer can't tell which input paid which output — breaking the input-to-output
+            linkage heuristic that powers most chain analysis.
           </Tile>
         </div>
 

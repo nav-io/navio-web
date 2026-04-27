@@ -14,8 +14,9 @@ export default function Stake() {
           <span className="gradient-text-green">Stake NAV. Secure the network.</span>
         </h1>
         <p className="text-white/60 max-w-2xl mx-auto text-lg">
-          No pool required. No custodian. No KYC. Lock your coins, run a binary, and earn block
-          rewards while keeping your validator identity cryptographically hidden.
+          Stake directly instead of delegating. You hold the keys, run the staker binary on
+          hardware you control, and produce blocks while the protocol keeps your validator
+          identity and stake amount hidden from everyone else on the network.
         </p>
       </section>
 
@@ -29,15 +30,14 @@ export default function Stake() {
         />
         <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           <Spec icon={<Cpu className="w-5 h-5" />} label="CPU">
-            8 vCPU x86-64 with AVX2, or ARMv8 with crypto extensions. Pairings on BLS12-381 are the
+            4+ vCPU x86-64 with AVX2, or ARMv8 with crypto extensions. Pairings on BLS12-381 are the
             bottleneck — modern chips handle it in ms.
           </Spec>
           <Spec icon={<HardDrive className="w-5 h-5" />} label="Storage">
-            200 GB NVMe SSD, unpruned. Random I/O matters more than raw size during sync.
+            80+ GB NVMe SSD, unpruned. Random I/O matters more than raw size during sync.
           </Spec>
           <Spec icon={<Wifi className="w-5 h-5" />} label="Network">
-            100 Mbps symmetric with low jitter. 2-minute blocks mean late propagation = missed
-            reward.
+            100 Mbps symmetric with low jitter. .
           </Spec>
           <Spec icon={<Terminal className="w-5 h-5" />} label="OS & time">
             Linux or macOS. NTP configured — skew must stay within ±2 s of wall time, or the
@@ -149,11 +149,11 @@ sudo make install  # optional`}
             </p>
           </Numbered>
 
-          <Numbered n="06" title="Unlock when done">
+          {/* <Numbered n="06" title="Unlock when done">
             <pre className="mono text-[11px] text-white/70 bg-black/40 rounded-lg p-3 overflow-x-auto">
 {`navio-cli stakeunlock 10000`}
             </pre>
-          </Numbered>
+          </Numbered> */}
         </div>
       </section>
 
