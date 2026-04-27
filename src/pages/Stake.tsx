@@ -1,8 +1,13 @@
 import { ExternalLink, Cpu, HardDrive, Wifi, Terminal, Coins } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
+import PageBanner from '../components/PageBanner';
 
 export default function Stake() {
   return (
+    <>
+      <PageBanner src="/illustrations/moon-cityscape.webp"
+        objectPosition="center 35%"
+        alt="Distributed infrastructure" />
     <div className="max-w-5xl mx-auto px-4 space-y-24">
       {/* HEADER */}
       <section className="pt-8 space-y-6 text-center">
@@ -94,6 +99,14 @@ sudo make install  # optional`}
             <code className="mono text-neon-blue">navio-wallet</code> (wallet utility), and{' '}
             <code className="mono text-neon-blue">navio-tx</code> (transaction constructor).
           </p>
+        </div>
+      </section>
+
+      {/* SECTION BREAK */}
+      <section>
+        <div className="rounded-2xl overflow-hidden border border-white/10 relative aspect-[3/1]">
+          <img src="/illustrations/retro-tunnel.png" alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/30 to-transparent pointer-events-none" />
         </div>
       </section>
 
@@ -235,6 +248,7 @@ sudo make install  # optional`}
         </div>
       </section>
     </div>
+    </>
   );
 }
 
