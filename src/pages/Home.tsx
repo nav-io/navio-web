@@ -142,8 +142,8 @@ export default function Home() {
       <section className="max-w-6xl mx-auto px-4 pt-24 sm:pt-32">
         <SectionHeading
           eyebrow="Ecosystem"
-          title={<>Infrastructure for private applications</>}
-          subtitle="A privacy base layer for the applications, issuers, and integrators that care about privacy."
+          title={<>Infrastructure for privacy</>}
+          subtitle="The base layer for the applications, issuers, and integrators that care about privacy."
         />
         <div className="mt-12 grid md:grid-cols-2 gap-6">
           <div className="glow-card overflow-hidden p-0">
