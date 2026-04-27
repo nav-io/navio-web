@@ -14,10 +14,10 @@ export default function Home() {
       <section className="relative">
         {/* Circular hero illustration — preserved from nav.io */}
         <div className="max-w-5xl mx-auto px-4 pt-6 sm:pt-10">
-          <div className="relative mx-auto aspect-[2/1] max-w-4xl">
+          <div className="relative mx-auto aspect-[2/1] max-w-5xl">
             <div className="absolute inset-0 rounded-full overflow-hidden border border-white/10 shadow-[0_0_80px_rgba(79,179,255,0.15)]">
               <img src="/illustrations/hero.jpg" alt="Navio" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/30 to-transparent pointer-events-none" />
+              <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-navy to-transparent pointer-events-none" />
               <div
                 className="absolute inset-0 pointer-events-none opacity-40"
                 style={{
@@ -147,7 +147,7 @@ export default function Home() {
         />
         <div className="mt-12 grid md:grid-cols-2 gap-6">
           <div className="glow-card overflow-hidden p-0">
-            <img src="/illustrations/private-payments.jpg" alt="" className="w-full h-52 object-cover" />
+            <img src="/illustrations/private-payments.jpg" alt="" className="w-full h-76 object-cover" />
             <div className="p-7 space-y-3">
               <h3 className="text-2xl font-semibold gradient-text">Private payments</h3>
               <p className="text-sm text-white/65 leading-relaxed">
@@ -160,7 +160,7 @@ export default function Home() {
             </div>
           </div>
           <div className="glow-card overflow-hidden p-0">
-            <img src="/illustrations/interoperability-defi.jpg" alt="" className="w-full h-52 object-cover" />
+            <img src="/illustrations/interoperability-defi.jpg" alt="" className="w-full h-76 object-cover" />
             <div className="p-7 space-y-3">
               <h3 className="text-2xl font-semibold gradient-text-pink">Interoperability & DeFi</h3>
               <p className="text-sm text-white/65 leading-relaxed">
@@ -184,7 +184,7 @@ export default function Home() {
       <section className="max-w-6xl mx-auto px-4 pt-24 sm:pt-32">
         <div className="grid md:grid-cols-2 gap-6">
           <div className="glow-card overflow-hidden p-0">
-            <img src="/illustrations/pops.jpg" alt="" className="w-full h-52 object-cover" />
+            <img src="/illustrations/pops.jpg" alt="" className="w-full h-76 object-cover" />
             <div className="p-7 space-y-3">
               <h3 className="text-2xl font-semibold gradient-text">Proof-of-Private-Stake</h3>
               <p className="text-sm text-white/65 leading-relaxed">
@@ -195,7 +195,7 @@ export default function Home() {
             </div>
           </div>
           <div className="glow-card overflow-hidden p-0">
-            <img src="/illustrations/decentralized-autonomous.jpg" alt="" className="w-full h-52 object-cover" />
+            <img src="/illustrations/decentralized-autonomous.jpg" alt="" className="w-full h-76 object-cover" />
             <div className="p-7 space-y-3">
               <h3 className="text-2xl font-semibold gradient-text-green">Decentralized &amp; autonomous</h3>
               <p className="text-sm text-white/65 leading-relaxed">
@@ -218,7 +218,7 @@ export default function Home() {
         />
         <div className="mt-12 grid md:grid-cols-2 gap-6">
           <div className="glow-card overflow-hidden p-0">
-            <img src="/illustrations/private-tokens.jpg" alt="" className="w-full h-52 object-cover" />
+            <img src="/illustrations/private-tokens.jpg" alt="" className="w-full h-76 object-cover" />
             <div className="p-7 space-y-3">
               <h3 className="text-2xl font-semibold gradient-text">Private tokens</h3>
               <p className="text-sm text-white/65 leading-relaxed">
@@ -230,7 +230,7 @@ export default function Home() {
             </div>
           </div>
           <div className="glow-card overflow-hidden p-0">
-            <img src="/illustrations/private-nfts.jpg" alt="" className="w-full h-52 object-cover" />
+            <img src="/illustrations/private-nfts.jpg" alt="" className="w-full h-76 object-cover" />
             <div className="p-7 space-y-3">
               <h3 className="text-2xl font-semibold gradient-text-pink">Private NFTs</h3>
               <p className="text-sm text-white/65 leading-relaxed">
@@ -241,7 +241,7 @@ export default function Home() {
             </div>
           </div>
           <div className="glow-card overflow-hidden p-0">
-            <img src="/illustrations/private-dex.jpg" alt="" className="w-full h-52 object-cover" />
+            <img src="/illustrations/private-dex.jpg" alt="" className="w-full h-76 object-cover" />
             <div className="p-7 space-y-3">
               <h3 className="text-2xl font-semibold gradient-text-green">Private DEX</h3>
               <p className="text-sm text-white/65 leading-relaxed">
@@ -252,7 +252,7 @@ export default function Home() {
             </div>
           </div>
           <div className="glow-card overflow-hidden p-0">
-            <img src="/illustrations/community.jpg" alt="" className="w-full h-52 object-cover" />
+            <img src="/illustrations/community.jpg" alt="" className="w-full h-76 object-cover" />
             <div className="p-7 space-y-3">
               <h3 className="text-2xl font-semibold gradient-text">Community</h3>
               <p className="text-sm text-white/65 leading-relaxed">
