@@ -7,12 +7,12 @@ const internalLinks = [
   { to: '/technology', label: 'Technology' },
   { to: '/stake', label: 'Stake' },
   { to: '/ecosystem', label: 'Ecosystem' },
+  { to: '/swap', label: 'Swap' },
   { to: '/manifesto', label: 'Manifesto' },
 ];
 
 const externalLinks = [
   { href: 'https://blocks.nav.io', label: 'Explorer' },
-  { href: 'https://bridge.nav.io', label: 'Bridge' },
   { href: 'https://docs.nav.io', label: 'Docs' },
 ];
 

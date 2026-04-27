@@ -44,7 +44,7 @@ export default function Footer() {
             <h3 className="mono text-[10px] tracking-[0.28em] uppercase text-white/40 mb-4">Apps</h3>
             <ul className="space-y-2.5 text-sm">
               <li><a href="https://blocks.nav.io" target="_blank" rel="noreferrer" className="text-white/70 hover:text-white transition">Block Explorer</a></li>
-              <li><a href="https://bridge.nav.io" target="_blank" rel="noreferrer" className="text-white/70 hover:text-white transition">Bridge</a></li>
+              <li><Link to="/bridge" className="text-white/70 hover:text-white transition">Bridge</Link></li>
               <li><a href="https://docs.nav.io" target="_blank" rel="noreferrer" className="text-white/70 hover:text-white transition">Developer Docs</a></li>
             </ul>
           </div>

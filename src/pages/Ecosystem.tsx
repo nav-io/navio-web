@@ -1,4 +1,5 @@
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import SectionHeading from '../components/SectionHeading';
 import PageBanner from '../components/PageBanner';
 
@@ -88,8 +89,8 @@ export default function Ecosystem() {
             />
             <AppCard
               title="Bridge"
-              url="https://bridge.nav.io"
-              desc="Migrate legacy Navcoin NAV to native NAVIO during the swap window."
+              url="/bridge"
+              desc="Migrate legacy Navcoin NAV to native NAVIO during the swap window. Live countdown to mainnet activation."
             />
             <AppCard
               title="Developer Docs"
@@ -114,9 +115,9 @@ export default function Ecosystem() {
               address — you'll paste it into the bridge.
             </Step>
             <Step n="02" title="Bridge in">
-              Open <a href="https://bridge.nav.io" target="_blank" rel="noreferrer" className="text-neon-blue hover:underline">bridge.nav.io</a>,
-              send Navcoin NAV to the generated deposit address, and watch the bridge burn your legacy
-              coins.
+              Open the <Link to="/bridge" className="text-neon-blue hover:underline">bridge page</Link>,
+              send Navcoin NAV to the generated deposit address, and watch the bridge burn your
+              legacy coins.
             </Step>
             <Step n="03" title="Receive native NAV">
               Your Navio address receives native NAVIO 1:1 within minutes. Legacy coins are burned,
@@ -219,16 +220,28 @@ function WalletCard({
 }
 
 function AppCard({ title, url, desc }: { title: string; url: string; desc: string }) {
-  return (
-    <a href={url} target="_blank" rel="noreferrer" className="glow-card group flex flex-col">
+  const isInternal = url.startsWith('/');
+  const ChevronIcon = isInternal ? ArrowRight : ExternalLink;
+  const display = isInternal ? `nav.io${url}` : url.replace('https://', '');
+
+  const inner = (
+    <>
       <h3 className="text-xl font-semibold gradient-text mb-2">{title}</h3>
       <p className="text-sm text-white/65 leading-relaxed flex-1 mb-4">{desc}</p>
       <div className="flex items-center justify-between">
         <div className="mono text-[10px] tracking-[0.2em] uppercase text-neon-blue/70">
-          {url.replace('https://', '')}
+          {display}
         </div>
-        <ExternalLink className="w-4 h-4 text-white/30 group-hover:text-white/70 transition" />
+        <ChevronIcon className="w-4 h-4 text-white/30 group-hover:text-white/70 transition" />
       </div>
+    </>
+  );
+
+  return isInternal ? (
+    <Link to={url} className="glow-card group flex flex-col">{inner}</Link>
+  ) : (
+    <a href={url} target="_blank" rel="noreferrer" className="glow-card group flex flex-col">
+      {inner}
     </a>
   );
 }

@@ -146,35 +146,29 @@ export default function Home() {
           subtitle="The base layer for the applications, issuers, and integrators that care about privacy."
         />
         <div className="mt-12 grid md:grid-cols-2 gap-6">
-          <div className="glow-card overflow-hidden p-0">
-            <img src="/illustrations/private-payments.jpg" alt="" className="w-full h-76 object-cover" />
-            <div className="p-7 space-y-3">
+          <div className="glow-card text-center space-y-6">
+            <div className="cyber-orb">
+              <img src="/illustrations/private-payments.jpg" alt="" />
+            </div>
+            <div className="space-y-3">
               <h3 className="text-2xl font-semibold gradient-text">Private payments</h3>
               <p className="text-sm text-white/65 leading-relaxed">
                 NAV transfers are confidential by default. The amount, the counterparty stay off the public ledger; an outside observer can see that a
                 transaction occurred but cannot reconstruct payment history from chain data nor the transaction details.
               </p>
-              <p className="text-sm text-white/65 leading-relaxed">
-                Confirmations land in roughly two minutes, with fees in fractions of a cent.
-              </p>
             </div>
           </div>
-          <div className="glow-card overflow-hidden p-0">
-            <img src="/illustrations/interoperability-defi.jpg" alt="" className="w-full h-76 object-cover" />
-            <div className="p-7 space-y-3">
+          <div className="glow-card text-center space-y-6">
+            <div className="cyber-orb">
+              <img src="/illustrations/interoperability-defi.jpg" alt="" />
+            </div>
+            <div className="space-y-3">
               <h3 className="text-2xl font-semibold gradient-text-pink">Interoperability & DeFi</h3>
               <p className="text-sm text-white/65 leading-relaxed">
                 The protocol ships with atomic-swap primitives and BLSCT signature aggregation,
                 which together provide the groundwork for trustless swaps with Bitcoin, Litecoin,
-                and other compatible chains. 
+                and other compatible chains.
               </p>
-              <p className="text-sm text-white/65 leading-relaxed">
-                Today the bridge handles the Navcoin → Navio migration during the mainnet swap
-                window.
-              </p>
-              <a href="https://bridge.nav.io" target="_blank" rel="noreferrer" className="ghost-btn text-xs mt-2">
-                Navcoin → Navio bridge <ExternalLink className="w-3 h-3" />
-              </a>
             </div>
           </div>
         </div>
@@ -183,9 +177,11 @@ export default function Home() {
       {/* CONSENSUS */}
       <section className="max-w-6xl mx-auto px-4 pt-24 sm:pt-32">
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="glow-card overflow-hidden p-0">
-            <img src="/illustrations/pops.jpg" alt="" className="w-full h-76 object-cover" />
-            <div className="p-7 space-y-3">
+          <div className="glow-card text-center space-y-6">
+            <div className="cyber-orb">
+              <img src="/illustrations/pops.jpg" alt="" />
+            </div>
+            <div className="space-y-3">
               <h3 className="text-2xl font-semibold gradient-text">Proof-of-Private-Stake</h3>
               <p className="text-sm text-white/65 leading-relaxed">
                 Validators produce a zero-knowledge proof that they control an eligible staked
@@ -194,9 +190,11 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="glow-card overflow-hidden p-0">
-            <img src="/illustrations/decentralized-autonomous.jpg" alt="" className="w-full h-76 object-cover" />
-            <div className="p-7 space-y-3">
+          <div className="glow-card text-center space-y-6">
+            <div className="cyber-orb">
+              <img src="/illustrations/decentralized-autonomous.jpg" alt="" />
+            </div>
+            <div className="space-y-3">
               <h3 className="text-2xl font-semibold gradient-text-green">Decentralized &amp; autonomous</h3>
               <p className="text-sm text-white/65 leading-relaxed">
                 Navio is maintained by an open community of contributors. There is no foundation
@@ -217,9 +215,11 @@ export default function Home() {
           gradient="pink"
         />
         <div className="mt-12 grid md:grid-cols-2 gap-6">
-          <div className="glow-card overflow-hidden p-0">
-            <img src="/illustrations/private-tokens.jpg" alt="" className="w-full h-76 object-cover" />
-            <div className="p-7 space-y-3">
+          <div className="glow-card text-center space-y-6">
+            <div className="cyber-orb">
+              <img src="/illustrations/private-tokens.jpg" alt="" />
+            </div>
+            <div className="space-y-3">
               <h3 className="text-2xl font-semibold gradient-text">Private tokens</h3>
               <p className="text-sm text-white/65 leading-relaxed">
                 Anyone can mint a token on Navio. Balances are Pedersen commitments. Amounts are
@@ -229,9 +229,11 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="glow-card overflow-hidden p-0">
-            <img src="/illustrations/private-nfts.jpg" alt="" className="w-full h-76 object-cover" />
-            <div className="p-7 space-y-3">
+          <div className="glow-card text-center space-y-6">
+            <div className="cyber-orb">
+              <img src="/illustrations/private-nfts.jpg" alt="" />
+            </div>
+            <div className="space-y-3">
               <h3 className="text-2xl font-semibold gradient-text-pink">Private NFTs</h3>
               <p className="text-sm text-white/65 leading-relaxed">
                 On a transparent chain, an NFT collection exposes what someone owns and, by
@@ -240,9 +242,11 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="glow-card overflow-hidden p-0">
-            <img src="/illustrations/private-dex.jpg" alt="" className="w-full h-76 object-cover" />
-            <div className="p-7 space-y-3">
+          <div className="glow-card text-center space-y-6">
+            <div className="cyber-orb">
+              <img src="/illustrations/private-dex.jpg" alt="" />
+            </div>
+            <div className="space-y-3">
               <h3 className="text-2xl font-semibold gradient-text-green">Private DEX</h3>
               <p className="text-sm text-white/65 leading-relaxed">
                 BLSCT aggregation enables trustless swaps between NAV, tokens, and wrapped external
@@ -251,9 +255,11 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="glow-card overflow-hidden p-0">
-            <img src="/illustrations/community.jpg" alt="" className="w-full h-76 object-cover" />
-            <div className="p-7 space-y-3">
+          <div className="glow-card text-center space-y-6">
+            <div className="cyber-orb">
+              <img src="/illustrations/community.jpg" alt="" />
+            </div>
+            <div className="space-y-3">
               <h3 className="text-2xl font-semibold gradient-text">Community</h3>
               <p className="text-sm text-white/65 leading-relaxed">
                 Our community is made up of idealists united by a shared vision: a decentralized,
@@ -282,8 +288,8 @@ export default function Home() {
           />
           <AppCard
             title="Bridge"
-            url="https://bridge.nav.io"
-            desc="Migrate legacy Navcoin NAV to native NAVIO during the swap window."
+            url="/bridge"
+            desc="Migrate legacy Navcoin NAV to native NAVIO during the swap window. Live countdown to mainnet activation."
             icon={<GitBranch className="w-5 h-5" />}
           />
           <AppCard
@@ -404,19 +410,31 @@ export default function Home() {
 function AppCard({
   title, url, desc, icon,
 }: { title: string; url: string; desc: string; icon: React.ReactNode }) {
-  return (
-    <a href={url} target="_blank" rel="noreferrer" className="glow-card group flex flex-col">
+  const isInternal = url.startsWith('/');
+  const ChevronIcon = isInternal ? ArrowRight : ExternalLink;
+  const display = isInternal ? `nav.io${url}` : url.replace('https://', '');
+
+  const inner = (
+    <>
       <div className="flex items-center justify-between mb-4">
         <div className="w-10 h-10 rounded-lg border border-white/10 bg-white/[0.03] flex items-center justify-center text-neon-blue">
           {icon}
         </div>
-        <ExternalLink className="w-4 h-4 text-white/30 group-hover:text-white/70 transition" />
+        <ChevronIcon className="w-4 h-4 text-white/30 group-hover:text-white/70 transition" />
       </div>
       <h3 className="text-lg font-semibold text-white mb-2">{title}</h3>
       <p className="text-sm text-white/60 leading-relaxed flex-1">{desc}</p>
       <div className="mono text-[10px] tracking-[0.2em] uppercase text-neon-blue/70 mt-5">
-        {url.replace('https://', '')}
+        {display}
       </div>
+    </>
+  );
+
+  return isInternal ? (
+    <Link to={url} className="glow-card group flex flex-col">{inner}</Link>
+  ) : (
+    <a href={url} target="_blank" rel="noreferrer" className="glow-card group flex flex-col">
+      {inner}
     </a>
   );
 }

@@ -5,6 +5,7 @@ import Technology from './pages/Technology';
 import Stake from './pages/Stake';
 import Ecosystem from './pages/Ecosystem';
 import Manifesto from './pages/Manifesto';
+import Bridge from './pages/Bridge';
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="/stake" element={<Stake />} />
         <Route path="/ecosystem" element={<Ecosystem />} />
         <Route path="/manifesto" element={<Manifesto />} />
+        <Route path="/swap" element={<Bridge />} />
         <Route path="*" element={<Home />} />
       </Route>
     </Routes>
