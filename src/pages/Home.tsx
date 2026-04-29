@@ -347,7 +347,7 @@ export default function Home() {
         <SectionHeading eyebrow="Essentials" title={<>What else you should know</>} />
         <div className="mt-12 grid md:grid-cols-3 gap-5">
           <div className="glow-card overflow-hidden p-0">
-            <img src="/illustrations/born-in-2014.jpg" alt="" className="w-full h-40 object-cover" />
+            <img src="/illustrations/born-in-2014.jpg" alt="" className="w-full h-64 object-cover" />
             <div className="p-6">
               <h3 className="text-lg font-semibold text-white mb-2">Born in 2014</h3>
               <p className="text-sm text-white/60">
@@ -357,7 +357,7 @@ export default function Home() {
             </div>
           </div>
           <div className="glow-card overflow-hidden p-0">
-            <img src="/illustrations/open-source.jpg" alt="" className="w-full h-40 object-cover" />
+            <img src="/illustrations/open-source.jpg" alt="" className="w-full h-64 object-cover" />
             <div className="p-6">
               <h3 className="text-lg font-semibold text-white mb-2">Open source</h3>
               <p className="text-sm text-white/60">
@@ -367,7 +367,7 @@ export default function Home() {
             </div>
           </div>
           <div className="glow-card overflow-hidden p-0">
-            <img src="/illustrations/passive-income.jpg" alt="" className="w-full h-40 object-cover" />
+            <img src="/illustrations/passive-income.jpg" alt="" className="w-full h-64 object-cover" />
             <div className="p-6">
               <h3 className="text-lg font-semibold text-white mb-2">Earn by securing</h3>
               <p className="text-sm text-white/60">
