@@ -18,12 +18,12 @@ export default function Layout() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="relative flex-1 grid-bg pt-20 sm:pt-24 pb-24">
-        {hexagonBg ? (
-          <GridBgMesh />
-        ) : (
-          <div className="grid-bg-mesh grid-bg-mesh-square" aria-hidden />
-        )}
+      <main
+        className={`relative flex-1 grid-bg ${
+          hexagonBg ? 'grid-bg--hex-mesh' : 'grid-bg--square-mesh'
+        } pt-20 sm:pt-24 pb-24`}
+      >
+        {hexagonBg ? <GridBgMesh /> : null}
         <Outlet />
       </main>
       <Footer />

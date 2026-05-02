@@ -27,7 +27,7 @@ export default function GridBgMesh() {
             <path
               fill="none"
               stroke="#3fa4ff"
-              strokeOpacity={0.22}
+              strokeOpacity={0.1}
               strokeWidth={1}
               strokeLinecap="butt"
               strokeLinejoin="miter"
