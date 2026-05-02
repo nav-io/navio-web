@@ -28,19 +28,27 @@
 }
 
 @layer components {
+  /* Inline SVG pattern (GridBgMesh) — z1 under page sections (z2), above aura (::before z0). */
   .grid-bg {
     position: relative;
     isolation: isolate;
-    background-image:
-      linear-gradient(rgba(63, 164, 255, 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(63, 164, 255, 0.06) 1px, transparent 1px);
-    background-size: 46px 46px;
+    background-color: transparent;
+  }
+  .grid-bg-mesh {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .grid-bg > *:not(.grid-bg-mesh) {
+    position: relative;
+    z-index: 2;
   }
   .grid-bg::before {
     content: '';
     position: fixed;
     inset: 0;
-    z-index: -1;
+    z-index: 0;
     pointer-events: none;
     background:
       radial-gradient(500px 260px at 20% 20%, rgba(63, 164, 255, 0.15), transparent 70%),
