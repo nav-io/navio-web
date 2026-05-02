@@ -5,7 +5,8 @@ import { useId } from 'react';
 const HEX_PATH =
   'M0 11.5 L0 34.5 M0 11.5 L19.918584 0 M0 34.5 L19.918584 46 M19.918584 0 L39.837169 11.5 M19.918584 46 L19.918584 69 M19.918584 46 L39.837169 34.5 M39.837169 11.5 L39.837169 34.5 M39.837169 11.5 L59.755753 0 M39.837169 34.5 L59.755753 46 M59.755753 0 L79.674337 11.5 M59.755753 46 L59.755753 69 M59.755753 46 L79.674337 34.5';
 
-/** Flat-top lattice: Δx_period = s·2√3, Δy_period = 3s (edge s = 23). Path clipped into [0,TILE_W)×[0,TILE_H). */
+/** Flat-top lattice: horizontal repeat TILE_W = 2√3·s (two column steps), TILE_H = 3s — see HEX_PATH clipping.
+ *  Visually matches square grid cell width (√3·s = TILE_W/2): `.grid-bg--square-mesh { --mesh-period }`. */
 const TILE_W = 79.67433714816835;
 const TILE_H = 69;
 
