@@ -34,14 +34,13 @@
     isolation: isolate;
   }
 
-  /* Pre-hex: square grid + aura ::before z:-1 (same painting model as git 398220a).
-     One cell edge matches one honeycomb horizontal width (√3·s), not TILE_W (TILE_W spans two cols). */
+  /* Pre-hex: square grid + aura ::before z:-1 (same painting model as git 398220a, 46px cells). */
+
   .grid-bg--square-mesh {
-    --mesh-period: 39.837168574084175px;
     background-image:
       linear-gradient(rgba(63, 164, 255, 0.06) 1px, transparent 1px),
       linear-gradient(90deg, rgba(63, 164, 255, 0.06) 1px, transparent 1px);
-    background-size: var(--mesh-period) var(--mesh-period);
+    background-size: 46px 46px;
   }
 
   /* Honeycomb: transparent `<main>`; aura z0, overlay mesh z1 (GridBgMesh), routed pages z2. */
