@@ -46,7 +46,7 @@ export default function Home() {
           </div>
 
           <p className="text-base sm:text-lg text-white/55 max-w-2xl mx-auto leading-relaxed">
-            Navio is a blockahin where every transaction is confidential by default — amounts,
+            Navio is a blockchain where every transaction is confidential by default — amounts,
             senders, receivers. Secured by Proof-of-Private-Stake. Open source since 2014.
             Community-owned. Fair and verifiable.
           </p>
