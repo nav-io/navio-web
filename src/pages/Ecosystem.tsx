@@ -17,7 +17,7 @@ export default function Ecosystem() {
             Ecosystem
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold leading-tight">
-            <span className="gradient-text">Wallets, tools, and apps</span>
+            <span className="gradient-text">Wallets, tools and apps</span>
           </h1>
           <p className="text-white/60 max-w-2xl mx-auto text-lg">
             Open source, self-hostable.
@@ -27,7 +27,7 @@ export default function Ecosystem() {
         {/* WALLETS */}
         <section id="wallets">
           <SectionHeading
-            eyebrow="01 — Wallets"
+            eyebrow="01 / Wallets"
             title={<>Hold, send, stake</>}
             center={false}
             gradient="blue"
@@ -35,7 +35,7 @@ export default function Ecosystem() {
           <div className="mt-10 grid md:grid-cols-2 gap-5">
             <WalletCard
               name="Navio Core"
-              desc="The reference wallet. Bundled with the full node — full BLSCT support, CLI-first, ideal for stakers, developers, and anyone who wants to run their own stack."
+              desc="The reference wallet. Bundled with the full node. Full BLSCT support, CLI-first, ideal for stakers, developers and anyone who wants to run their own stack."
               tags={['CLI', 'Full node', 'BLSCT']}
               links={[
                 { label: 'Binaries', href: 'https://github.com/nav-io/navio-core/releases' },
@@ -44,7 +44,7 @@ export default function Ecosystem() {
             />
             <WalletCard
               name="Navio X"
-              desc="Cross-platform desktop wallet. Electron app, tighter UX for everyday users. Available on macOS, Windows, and Linux."
+              desc="Cross-platform desktop wallet. Electron app, tighter UX for everyday users. Available on macOS, Windows and Linux."
               tags={['Desktop', 'Electron', 'Beta']}
               links={[
                 { label: 'Website', href: 'https://navio-x.github.io/' },
@@ -55,7 +55,7 @@ export default function Ecosystem() {
         </section>
         <section id="devs">
           <SectionHeading
-            eyebrow="02 — Development"
+            eyebrow="02 / Development"
             title={<>Build your own</>}
             center={false}
             gradient="blue"
@@ -73,7 +73,7 @@ export default function Ecosystem() {
             />
             <WalletCard
               name="libblsct bindings"
-              desc="Native BLSCT primitives for integrators — TypeScript native/WASM, Python; C / Rust / Go on the roadmap. For lower level building."
+              desc="Native BLSCT primitives for integrators. TypeScript native/WASM, Python; C / Rust / Go on the roadmap. For lower level building."
               tags={['Native', 'WASM', 'Python']}
               links={[
                 { label: 'Docs', href: 'https://docs.nav.io/blsct-lib' },
@@ -94,7 +94,7 @@ export default function Ecosystem() {
         {/* APPS */}
         <section id="apps">
           <SectionHeading
-            eyebrow="03 — Tools"
+            eyebrow="03 / Tools"
             title={<>Live right now</>}
             center={false}
             gradient="pink"
@@ -116,7 +116,7 @@ export default function Ecosystem() {
         {/* TRANSITION */}
         <section id="transition">
           <SectionHeading
-            eyebrow="03 — Navcoin → Navio"
+            eyebrow="03 / Navcoin → Navio"
             title={<>Migrating legacy NAV</>}
             center={false}
             gradient="green"
@@ -124,12 +124,12 @@ export default function Ecosystem() {
           />
           <div className="mt-10 grid md:grid-cols-3 gap-5">
             <Step n="01" title="Create a wallet">
-              Generate a Navio wallet using Navio Core, Navio X, or the SDK. Capture your receive
-              address — you'll paste it into the bridge.
+              Generate a Navio wallet using Navio Core, Navio X or the SDK. Capture your receive
+              address. You'll paste it into the bridge.
             </Step>
             <Step n="02" title="Bridge in">
               Open the <Link to="/bridge" className="text-neon-blue hover:underline">bridge page</Link>,
-              send Navcoin NAV to the generated deposit address, and watch the bridge burn your
+              send Navcoin NAV to the generated deposit address and watch the bridge burn your
               legacy coins.
             </Step>
             <Step n="03" title="Receive native NAV">
@@ -149,7 +149,7 @@ export default function Ecosystem() {
         {/* SOURCE */}
         <section id="source">
           <SectionHeading
-            eyebrow="04 — Source"
+            eyebrow="04 / Source"
             title={<>Everything is on GitHub</>}
             center={false}
             gradient="blue"
@@ -186,7 +186,7 @@ const REPOS = [
   },
   {
     name: 'libblsct-bindings', url: 'https://github.com/nav-io/libblsct-bindings',
-    desc: 'Native BLSCT primitives — TS, WASM, Python. C/Rust/Go planned.'
+    desc: 'Native BLSCT primitives. TS, WASM, Python. C/Rust/Go planned.'
   },
   {
     name: 'navio-blocks', url: 'https://github.com/nav-io/navio-blocks',

@@ -12,7 +12,7 @@ export default function Footer() {
             </Link>
             <p className="text-sm text-white/60 max-w-sm mb-5">
               Confidentiality by default. Stake-secured. Open source. A base-layer blockchain
-              built for people who believe financial privacy is a right — not a feature.
+              built for people who believe financial privacy is a right, not a feature.
             </p>
             <div className="flex items-center gap-3">
               <a href="https://discord.com/invite/eBQ2QUkVXy" target="_blank" rel="noreferrer"

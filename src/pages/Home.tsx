@@ -46,9 +46,9 @@ export default function Home() {
           </div>
 
           <p className="text-base sm:text-lg text-white/55 max-w-2xl mx-auto leading-relaxed">
-            Navio is a blockchain where every transaction is confidential by default — amounts,
-            senders, receivers. Secured by Proof-of-Private-Stake. Open source since 2014.
-            Community-owned. Fair and verifiable.
+            Navio is a blockchain where every transaction is confidential by default: amounts,
+            senders and receivers are hidden. Secured by Proof-of-Private-Stake. Open source since
+            2014, community-owned, verifiable.
           </p>
 
           <div className="flex flex-wrap gap-3 justify-center pt-6">
@@ -87,7 +87,7 @@ export default function Home() {
             <div className="mono text-[10px] tracking-[0.22em] uppercase text-neon-pink/80 mb-2">02 · Permissionless</div>
             <p className="text-white/70 leading-relaxed text-sm">
               The protocol is open source and runs on independently operated nodes. Anyone can
-              validate, transact, or build on top without asking permission — and no one, can pause it, censor it, or roll it back.
+              validate, transact or build on top without asking permission. No one can pause it, censor it or roll it back.
             </p>
           </div>
           <div className="glow-card">
@@ -129,7 +129,7 @@ export default function Home() {
               <h3 className="text-2xl font-semibold gradient-text-pink">BLSCT</h3>
               <p className="text-sm text-white/65 leading-relaxed">
                 Navio's privacy engine: Pedersen commitments for amounts, stealth addresses via double
-                public keys, and aggregated BLS signatures — smaller proofs, anonymity set at the block level.
+                public keys and aggregated BLS signatures. Smaller proofs, anonymity set at the block level.
               </p>
             </div>
           </div>
@@ -183,7 +183,7 @@ export default function Home() {
               <p className="text-sm text-white/65 leading-relaxed">
                 Anyone can mint a token on Navio. Balances are Pedersen commitments. Amounts are
                 hidden. Great for
-                stablecoins, wrapped assets, governance units, or anything else that should not be a
+                stablecoins, wrapped assets, governance units or anything else that should not be a
                 public spreadsheet.
               </p>
             </div>
@@ -208,8 +208,8 @@ export default function Home() {
             <div className="space-y-3">
               <h3 className="text-2xl font-semibold gradient-text-green">Private DEX</h3>
               <p className="text-sm text-white/65 leading-relaxed">
-                BLSCT aggregation enables trustless swaps between NAV, tokens, and wrapped external
-                assets in a single transaction — no order book surveillance, no front-running bots,
+                BLSCT aggregation enables trustless swaps between NAV, tokens and wrapped external
+                assets in a single transaction. No order book surveillance, no front-running bots,
                 no MEV. One tx in, matched tx out, both parties satisfied.
               </p>
             </div>
@@ -222,9 +222,8 @@ export default function Home() {
               <h3 className="text-2xl font-semibold gradient-text">Community</h3>
               <p className="text-sm text-white/65 leading-relaxed">
                 Our community is made up of idealists united by a shared vision: a decentralized,
-                private blockchain where every user action is private by default — no compromises,
-                no exceptions. We are not driven by the pursuit of wealth, but by the pursuit of
-                freedom.
+                private blockchain where every user action is private by default, with no
+                compromises or exceptions. We care about freedom, not wealth.
               </p>
             </div>
           </div>
@@ -236,13 +235,13 @@ export default function Home() {
         <SectionHeading
           eyebrow="Apps & tools"
           title={<>Live on the network today</>}
-          subtitle="Explore the chain, bridge in, and build on top."
+          subtitle="Explore the chain, bridge in and build on top."
         />
         <div className="mt-12 grid md:grid-cols-3 gap-5">
           <AppCard
             title="Block Explorer"
             url="https://blocks.nav.io"
-            desc="Browse blocks, inspect transactions, check the supply — what little is publicly visible. Self-hostable and fully open source."
+            desc="Browse blocks, inspect transactions, check the supply, what little is publicly visible. Self-hostable and fully open source."
             icon={<Layers className="w-5 h-5" />}
           />
           <AppCard
@@ -254,7 +253,7 @@ export default function Home() {
           <AppCard
             title="Developer Docs"
             url="https://docs.nav.io"
-            desc="Protocol specs, RPC reference, SDK guides, node operation, and the BLSCT cryptography reference."
+            desc="Protocol specs, RPC reference, SDK guides, node operation and the BLSCT cryptography reference."
             icon={<Cpu className="w-5 h-5" />}
           />
         </div>
@@ -272,11 +271,11 @@ export default function Home() {
             status="done"
             title="Navcoin launch"
             date="2014"
-            body="Launched as Navcoin with no pre-mine, no pre-sale, and no investor allocation. Open source from the first commit."
+            body="Launched as Navcoin with no pre-mine, no pre-sale and no investor allocation. Open source from the first commit."
           />
           <Milestone
             status="done"
-            title="PoPS testnet — Phase 1"
+            title="PoPS testnet / Phase 1"
             date="July 2024"
             body="Public testnet running Proof-of-Private-Stake went live and started producing stable blocks."
           />
@@ -311,7 +310,7 @@ export default function Home() {
               <h3 className="text-lg font-semibold text-white mb-2">Proof-of-stake over mining</h3>
               <p className="text-sm text-white/60">
                 Staking ties security to locked economic weight instead of burning electricity. Incentives go to people who hold the asset and
-                run honest nodes — free for everyone to participate.
+                run honest nodes. Free for everyone to participate.
               </p>
             </div>
           </div>
@@ -321,7 +320,7 @@ export default function Home() {
             <div className="p-6">
               <h3 className="text-lg font-semibold text-white mb-2">How to get involved</h3>
               <p className="text-sm text-white/60">
-                Lock 10,000 NAV, run the staker binary, earn 8 NAVIO per each block. No delegation required, you run your own infra — your keys, your stake, your coins.
+                Lock 10,000 NAV, run the staker binary, earn 8 NAVIO per each block. No delegation required, you run your own infra. Your keys, your stake, your coins.
               </p>
             </div>
           </div>
@@ -347,8 +346,7 @@ export default function Home() {
             Financial privacy is a human right.
           </h2>
           <p className="text-white/65 max-w-xl mx-auto mb-8">
-            If our vision resonates with you, come build with us — or at minimum, come argue with
-            us. 
+            If you share the view, come build with us. Or come argue with us.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <a href="https://discord.com/invite/eBQ2QUkVXy" target="_blank" rel="noreferrer" className="neon-btn">

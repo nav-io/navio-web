@@ -16,11 +16,11 @@ export default function Stake() {
           Run a node
         </div>
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold leading-tight">
-          <span className="gradient-text-green">Stake NAV. Secure the network.</span>
+          <span className="gradient-text-green">Stake NAV, secure the network.</span>
         </h1>
         <p className="text-white/60 max-w-2xl mx-auto text-lg">
           Stake directly; run your own node. You hold the keys, run the staker binary on
-          hardware you control, and produce blocks while the protocol keeps your validator
+          hardware you control and produce blocks while the protocol keeps your validator
           identity and stake amount hidden from everyone else on the network.
         </p>
       </section>
@@ -28,14 +28,14 @@ export default function Stake() {
       {/* HARDWARE */}
       <section>
         <SectionHeading
-          eyebrow="01 — Hardware"
+          eyebrow="01 / Hardware"
           title={<>What you need to run</>}
           center={false}
           gradient="blue"
         />
         <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           <Spec icon={<Cpu className="w-5 h-5" />} label="CPU">
-            4+ vCPU x86-64 with AVX2, or ARMv8 with crypto extensions.
+            4+ vCPU x86-64 with AVX2 or ARMv8 with crypto extensions.
           </Spec>
           <Spec icon={<HardDrive className="w-5 h-5" />} label="Storage & Memory">
             40+ GB NVMe SSD. 8GB+ RAM.
@@ -52,7 +52,7 @@ export default function Stake() {
       {/* INSTALL */}
       <section>
         <SectionHeading
-          eyebrow="02 — Install"
+          eyebrow="02 / Install"
           title={<>Build the node</>}
           center={false}
           gradient="pink"
@@ -94,7 +94,7 @@ sudo make install  # optional`}
             Produces <code className="mono text-neon-blue">naviod</code> (full node),{' '}
             <code className="mono text-neon-blue">navio-cli</code> (RPC client),{' '}
             <code className="mono text-neon-blue">navio-staker</code> (block producer),{' '}
-            <code className="mono text-neon-blue">navio-wallet</code> (wallet utility), and{' '}
+            <code className="mono text-neon-blue">navio-wallet</code> (wallet utility) and{' '}
             <code className="mono text-neon-blue">navio-tx</code> (transaction constructor).
           </p>
         </div>
@@ -111,7 +111,7 @@ sudo make install  # optional`}
       {/* STAKE */}
       <section>
         <SectionHeading
-          eyebrow="03 — Stake"
+          eyebrow="03 / Stake"
           title={<>Lock NAV, run the staker</>}
           center={false}
           gradient="green"
@@ -155,7 +155,7 @@ sudo make install  # optional`}
 {`navio-staker -wallet=staker`}
             </pre>
             <p className="text-xs text-white/55 mt-2">
-              Polls the node every block, constructs PoPS proofs for each eligible output, and
+              Polls the node every block, constructs PoPS proofs for each eligible output and
               submits blocks when its proof wins.
             </p>
           </Numbered>
@@ -171,7 +171,7 @@ sudo make install  # optional`}
       {/* REWARDS */}
       <section>
         <SectionHeading
-          eyebrow="04 — Rewards"
+          eyebrow="04 / Rewards"
           title={<>What you earn</>}
           center={false}
           gradient="pink"
@@ -207,7 +207,7 @@ sudo make install  # optional`}
             <div className="text-3xl font-semibold gradient-text mb-1">burned</div>
             <p className="text-xs text-white/55 leading-relaxed mt-2">
               Validators receive the block subsidy only. Transaction fees are destroyed, making
-              heavy blocks mildly deflationary — a structural counterweight to inflation.
+              heavy blocks mildly deflationary, a structural counterweight to inflation.
             </p>
           </div>
         </div>
@@ -216,7 +216,7 @@ sudo make install  # optional`}
       {/* RESOURCES */}
       <section>
         <SectionHeading
-          eyebrow="05 — Resources"
+          eyebrow="05 / Resources"
           title={<>Where to go next</>}
           center={false}
           gradient="blue"
@@ -224,7 +224,7 @@ sudo make install  # optional`}
         <div className="mt-8 grid md:grid-cols-3 gap-5">
           <a href="https://docs.nav.io/node/install" target="_blank" rel="noreferrer" className="glow-card group">
             <h3 className="text-base font-semibold text-white mb-2">Install guide</h3>
-            <p className="text-sm text-white/60 leading-relaxed">Full install walkthrough — Docker, release binaries, source.</p>
+            <p className="text-sm text-white/60 leading-relaxed">Full install walkthrough. Docker, release binaries, source.</p>
             <div className="mono text-[10px] tracking-[0.2em] uppercase text-neon-blue/70 mt-4 flex items-center gap-1">
               docs.nav.io/node/install <ExternalLink className="w-3 h-3" />
             </div>

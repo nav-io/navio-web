@@ -17,21 +17,21 @@ export default function Manifesto() {
             <span className="gradient-text-pink">Privacy is not a privilege.</span>
           </h1>
           <p className="text-white/60 max-w-2xl mx-auto text-lg italic">
-            "Cypherpunks write code." — Eric Hughes, 1993
+            "Cypherpunks write code." Eric Hughes, 1993
           </p>
         </section>
 
         {/* BLOCK 1 */}
         <section className="space-y-6">
           <p className="text-lg text-white/80 leading-relaxed first-letter:text-5xl first-letter:font-semibold first-letter:gradient-text-pink first-letter:mr-2 first-letter:float-left first-letter:leading-none">
-            Every transaction you make is surveillance bait. Your payment processor sells it. Your
-            bank flags it. Your government subpoenas it. Your exchange turns it over without a fight.
-            A pseudonymous chain like Bitcoin is not private — it is a public ledger with a thin layer
-            of plausible deniability, pierced by any chain-analysis firm with a GPU and a court order.
+            Every transaction you make is surveillance bait. Payment processors sell it, banks flag
+            it, governments subpoena it, exchanges hand it over without a fight. A pseudonymous
+            chain like Bitcoin is not private. It is a public ledger with a thin layer of plausible
+            deniability, pierced by any chain-analysis firm with a GPU and a court order.
           </p>
           <p className="text-lg text-white/80 leading-relaxed">
             This is not an accident. The financial surveillance apparatus was built on purpose. KYC,
-            AML, FATF travel rules, sanctions screening, counterparty risk scoring — all of it exists
+            AML, FATF travel rules, sanctions screening, counterparty risk scoring. All of it exists
             to ensure that every dollar, every token, every satoshi you touch is legible to someone
             with authority. And that authority is expanding.
           </p>
@@ -70,16 +70,16 @@ export default function Manifesto() {
           />
           <p className="text-white/75 leading-relaxed">
             Every major chain with "optional" privacy ends up with a two-tier ledger: the unshielded
-            majority, and a suspicious minority who chose to shield. The small anonymity set is easier
+            majority and a suspicious minority who chose to shield. The small anonymity set is easier
             to deanonymize. The act of using privacy becomes itself a red flag. Exchanges refuse to
             process deposits from shielded pools. Regulators pressure wallet vendors to disable
-            private features. The tool works technically, and fails socially.
+            private features. The tool works technically and fails socially.
           </p>
           <p className="text-white/75 leading-relaxed">
             Navio doesn't have a shielded pool. It has a shielded <em>chain</em>. The anonymity set
             of any transaction is every other transaction in the same block. There is no unshielded
             option to contrast with. Privacy
-            isn't a signal — it's the default.
+            is the default, not a signal.
           </p>
         </section>
 
@@ -93,16 +93,16 @@ export default function Manifesto() {
           />
           <p className="text-white/75 leading-relaxed">
             Standard Proof-of-Stake networks publish every validator's address and every stake
-            amount. You can see who is producing blocks. You can see how much they hold. You can
-            subpoena the node operator. You can sanction the stake. You can freeze the rewards. In a
-            hostile legal environment, a transparent validator set is a direct attack surface on the
-            chain's liveness and neutrality.
+            amount in the clear. That means node operators can be subpoenaed, stakes sanctioned,
+            rewards frozen. In a hostile legal environment, a transparent validator set is a direct
+            attack surface on the chain's liveness and neutrality.
           </p>
           <p className="text-white/75 leading-relaxed">
-            Proof-of-Private-Stake makes surveillance harder. Who produced the block?  How much
-            stake did they use? What address will receive the next reward? We obfuscate the most important layer of a blockchain: consensus. This
-            isn't paranoia. This is load-bearing — privacy for the validator is privacy for every user
-            who relies on the network remaining censorship-resistant.
+            Proof-of-Private-Stake makes that surveillance harder. The block producer, the stake
+            amount, the reward address, they are all obfuscated at the protocol level. We hide the
+            most important layer of a blockchain: consensus. This is load-bearing, not paranoia.
+            Privacy for the validator is privacy for every user who relies on the network remaining
+            censorship-resistant.
           </p>
         </section>
 
@@ -116,13 +116,13 @@ export default function Manifesto() {
           />
           <p className="text-white/75 leading-relaxed">
             The only way to know that the cryptography behind your transactions does what its
-            authors claim is to read the code. Navio is MIT-licensed from genesis. Audit it.
-            Fork it. Port it. Break it. Fix it.
+            authors claim is to read the code. Navio is MIT-licensed from genesis. Read it before
+            you trust it. Fork it if you don't like where it's going.
           </p>
           <p className="text-white/75 leading-relaxed">
             A fair launch is part of the same ethic. No pre-mine. No ICO. No VC allocation with
             four-year vesting. No team tokens waiting to dump. The supply that exists on the chain
-            today was earned, bought from the open market — by users, by stakers, by people who staked or held it through
+            today was earned, bought from the open market by users, by stakers, by people who staked or held it through
             a decade of market weather. You cannot buy your way to controlling this network.
           </p>
         </section>
@@ -145,13 +145,13 @@ export default function Manifesto() {
           />
           <p className="text-white/75 leading-relaxed">
             Centralized exchanges are the surveillance layer of the crypto economy. They demand KYC,
-            they freeze accounts, they hand user data to anyone with a badge, and they charge
+            they freeze accounts, they hand user data to anyone with a badge and they charge
             six-figure listing fees to projects willing to submit to all of it. We are not that
-            project. If an exchange wants to trade NAV, they can — on our terms, or not at all.
+            project. If an exchange wants to trade NAV, they can, on our terms or not at all.
           </p>
           <p className="text-white/75 leading-relaxed">
             Delisting a privacy coin is a badge of honor. It tells the user exactly which venues
-            have chosen surveillance over sovereignty, and that's information worth having.
+            have chosen surveillance over sovereignty. That's information worth having.
             Atomic swaps and decentralized exchanges work. They are the correct venue for a
             confidential asset. If you need a custodian to hold your coins, you have not understood
             why we built this.
@@ -161,11 +161,12 @@ export default function Manifesto() {
               If you are an enemy of privacy, we are not your friends.
             </p>
             <p className="text-sm text-white/60 leading-relaxed mt-3">
-              That applies to exchanges. It applies to chain-analysis firms. It applies to
-              regulators drafting mass-surveillance statutes under the banner of "consumer
-              protection." It applies to wallet vendors shipping closed-source spyware, to
-              foundations that trade user data for favorable regulatory treatment, and to
-              "privacy" projects that fold the moment their soul can be sold. But also to market participants who will try to speculate on the value of NAV without alignment with our principles. We don't welcome you. 
+              That covers exchanges, chain-analysis firms, regulators drafting mass-surveillance
+              statutes under the banner of "consumer protection," wallet vendors shipping
+              closed-source spyware, foundations that trade user data for favorable regulatory
+              treatment and "privacy" projects that fold the moment their soul can be sold. It
+              also covers market participants who speculate on NAV without alignment with our
+              principles. You are not welcome.
             </p>
           </div>
         </section>
@@ -179,15 +180,14 @@ export default function Manifesto() {
             gradient="green"
           />
           <p className="text-white/75 leading-relaxed">
-            We do not buy influencer posts. We do not sponsor newsletters. We do not run airdrops
-            designed to manufacture a fake on-chain footprint. Every dollar spent on paid marketing
-            is a dollar stolen from engineering, audits, documentation, and infrastructure — the
-            things that actually matter.
+            No influencer posts, no sponsored newsletters, no airdrops designed to manufacture a
+            fake on-chain footprint. Every dollar spent on paid marketing is a dollar stolen from
+            engineering, audits, documentation and infrastructure, the things that actually matter.
           </p>
           <p className="text-white/75 leading-relaxed">
-            The people who believe in Navio will spread the message. Stakers, developers, contributors,
-            long-time holders who have stood by us for a decade, privacy advocates. They will write the posts. They will run
-            the channels. 
+            The people who believe in Navio spread the message. Stakers, developers, contributors,
+            long-time holders who have stood by us for a decade, privacy advocates. They write the
+            posts and run the channels.
           </p>
         </section>
 
@@ -212,8 +212,8 @@ export default function Manifesto() {
           <div className="glow-card gradient-border">
             <h2 className="text-3xl font-semibold gradient-text-pink mb-4">Come stand with us.</h2>
             <p className="text-white/65 max-w-xl mx-auto mb-8 leading-relaxed">
-              We are not a foundation. We are not a company. We are a community of idealists,
-              developers, and stakers united by the conviction that financial privacy is a human right.
+              We are not a foundation or a company. We are a community of idealists, developers
+              and stakers united by the conviction that financial privacy is a human right.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <a href="https://discord.com/invite/eBQ2QUkVXy" target="_blank" rel="noreferrer" className="neon-btn">
@@ -244,7 +244,7 @@ const PRINCIPLES = [
   },
   {
     title: 'No KYC, no permission, no whitelist',
-    body: 'Anyone can run a node, stake coins, send a transaction, or build an app.',
+    body: 'Anyone can run a node, stake coins, send a transaction or build an app.',
   },
   {
     title: 'Fair launch, no pre-mine, no ICO',
@@ -256,7 +256,7 @@ const PRINCIPLES = [
   },
   {
     title: 'No central authority',
-    body: 'No entity controls Navio. No foundation. No single individual can veto a consensus change outside of the consensus rules. Rules live in code, changes ship through community agreement, and forks are always an option.',
+    body: 'No entity controls Navio. No foundation. No single individual can veto a consensus change outside of the consensus rules. Rules live in code, changes ship through community agreement and forks are always an option.',
   },
   {
     title: 'No listing fees, no CEX tribute',
@@ -268,10 +268,10 @@ const PRINCIPLES = [
   },
   {
     title: 'No paid marketing, no bought attention',
-    body: 'We do not pay influencers. We do not sponsor newsletters. Every dollar goes to engineering, audits, docs, and infrastructure. The community carries the torch and spreads the message.',
+    body: 'We do not pay influencers. We do not sponsor newsletters. Every dollar goes to engineering, audits, docs and infrastructure. The community carries the torch and spreads the message.',
   },
   {
     title: 'Fight financial surveillance',
-    body: 'The surveillance financial system is not a neutral fact. It is an active tool of coercion, and private money is a tool of resistance.',
+    body: 'The surveillance financial system is not a neutral fact. It is an active tool of coercion. Private money is a tool of resistance.',
   },
 ];
