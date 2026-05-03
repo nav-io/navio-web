@@ -37,7 +37,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4 pt-12 sm:pt-16 text-center space-y-8">
           <div className="mono text-[10px] tracking-[0.32em] uppercase text-neon-blue/80 inline-flex items-center gap-2">
             <span className="neon-dot h-1.5 w-1.5 animate-pulseRing" />
-            testnet.live · mainnet.june_july_2026
+            testnet.live · mainnet.03_july_2026
           </div>
 
           {/* Slogan effect — preserved from nav.io */}
