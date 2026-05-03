@@ -21,9 +21,9 @@ export default function Technology() {
             <span className="gradient-text">The cryptography under the hood.</span>
           </h1>
           <p className="text-white/60 max-w-2xl mx-auto text-lg">
-            Navio combines years of research and development into a single coherent base layer. Here's what each
+            Navio combines years of research and development into a coherent base layer. Here's what each
             piece does, why it matters, and how they fit together — explained in plain language, with
-            links to the real specs for when you want the math.
+            links to deeper documentation.
           </p>
           <div className="pt-2">
             <a href="https://docs.nav.io" target="_blank" rel="noreferrer" className="neon-btn">
@@ -88,11 +88,11 @@ export default function Technology() {
           <div className="glow-card mt-6">
             <h3 className="text-lg font-semibold text-white mb-3">Why base-layer, not opt-in</h3>
             <p className="text-sm text-white/70 leading-relaxed">
-              Opt-in privacy (Zcash-style shielded pools, Bitcoin CoinJoin) produces a two-tier
+              Opt-in privacy (Zcash-style shielded pools, Bitcoin CoinJoin, EVM tornado cash) produces a two-tier
               blockchain: people who need privacy stand out, and a small anonymity set is easier to
-              deanonymize. Navio enforces privacy for every transaction on the canonical chain — so
+              deanonymize. Navio enforces privacy for every transaction on the full chain — so
               the anonymity set of any transaction is every other transaction in the same block, and
-              privacy isn't a suspicious signal.
+              privacy isn't any added suspicious signal.
             </p>
           </div>
         </section>
@@ -101,7 +101,7 @@ export default function Technology() {
         <section id="pops">
           <SectionHeading
             eyebrow="02 — Consensus"
-            title={<>Proof-of-Private-Stake, in plain English</>}
+            title={<>Proof-of-Private-Stake, 101</>}
             center={false}
             gradient="pink"
           />
@@ -109,14 +109,13 @@ export default function Technology() {
             <div className="glow-card">
               <p className="text-white/75 leading-relaxed">
                 Ordinary Proof-of-Stake publishes the validator's address and the staked amount in the
-                clear. Anyone can see who is producing blocks, and for how much. That's a privacy
+                clear. Anyone can see who is producing blocks, and how big is their stake. That's a privacy
                 violation <em>and</em> a surveillance opportunity — for regulators, chain-analysis
-                firms, and anyone with subpoena power.
+                firms, and anyone else.
               </p>
               <p className="text-white/75 leading-relaxed mt-3">
                 Navio's <strong className="text-white">Proof-of-Private-Stake (PoPS)</strong> keeps the
-                economic security of PoS, but validators prove eligibility in zero-knowledge — without
-                ever revealing <em>who</em> they are or <em>how much</em> they've staked.
+                economic security and benefits of classic PoS, but validators prove eligibility in zero-knowledge — a first in the industry.
               </p>
             </div>
 
@@ -126,7 +125,7 @@ export default function Technology() {
                 the amount itself is hidden inside a Pedersen commitment.
               </Step>
               <Step n="02" accent="purple" title="Prove eligibility">
-                Each block, the staker proves (a) they control <em>some</em> output in the set, (b) the
+                Each block, the staker proves (a) they control <em>some</em> output in the sampled set, (b) the
                 hidden amount meets threshold, (c) the proof is bound to this specific block — all in
                 zero-knowledge.
               </Step>
@@ -157,10 +156,9 @@ export default function Technology() {
 
             <div className="grid md:grid-cols-2 gap-5">
               <div className="border border-white/10 rounded-xl p-5 bg-white/[0.02]">
-                <h4 className="font-semibold text-white mb-2">Your own coin</h4>
+                <h4 className="font-semibold text-white mb-2">Your own token</h4>
                 <p className="text-sm text-white/65 leading-relaxed">
-                  Launch a token once — the chain knows it exists, and that only you can print more
-                  of it. After that, every transfer of that token is private: people see that "some
+                  Launch a token — you pick the name, symbol and max supply. After that, every transfer of that token is private: people see that "some
                   token X moved," but not who owned it, who got it, or how much they got.
                 </p>
               </div>
@@ -193,23 +191,23 @@ export default function Technology() {
           <div className="mt-8 grid md:grid-cols-2 gap-5">
             <div className="glow-card">
               <div className="mono text-[10px] tracking-[0.22em] uppercase text-neon-blue/80 mb-2">
-                Intra-chain · aggregated
+                Intra-chain 
               </div>
               <h3 className="text-lg font-semibold text-white mb-3">Native Navio swaps</h3>
               <p className="text-sm text-white/70 leading-relaxed">
                 BLS signature aggregation lets Alice and Bob each construct "half" of a transaction:
                 Alice spends 100 TokenA, creates a 10 NAV output for herself; Bob spends 10 NAV,
                 creates 100 TokenA for himself. Signatures aggregate. The combined transaction
-                balances and broadcasts as one atomic unit. No HTLCs, no preimages, no race.
+                balances and broadcasts as one atomic unit. No HTLCs, no preimages.
               </p>
             </div>
             <div className="glow-card">
               <div className="mono text-[10px] tracking-[0.22em] uppercase text-neon-pink/80 mb-2">
-                Cross-chain · HTLC
+                Cross-chain 
               </div>
-              <h3 className="text-lg font-semibold text-white mb-3">BTC / LTC swaps</h3>
+              <h3 className="text-lg font-semibold text-white mb-3">BTC / LTC / HTLC-model swaps</h3>
               <p className="text-sm text-white/70 leading-relaxed">
-                For chains outside Navio, traditional hash-time-locked contracts work: Navio's
+                For chains outside Navio, we support traditional HTLC (hash-time-locked contracts): Navio's
                 scripting includes <code className="mono text-neon-blue text-xs">OP_BLSCHECKSIG</code> and standard
                 <code className="mono text-neon-blue text-xs"> OP_CHECKLOCKTIMEVERIFY</code>, enabling trustless
                 atomic swaps against Bitcoin, Litecoin, and anything else that speaks Bitcoin Script.
@@ -229,6 +227,7 @@ export default function Technology() {
           <div className="mt-10 space-y-10">
             <ParamGroup label="Supply">
               <Metric label="Initial supply" value="81,743,678" unit="NAV" big />
+              <Metric label="Max annual inflation" value="2.57" unit="%" big />
               <Metric label="Max supply" value="∞" unit="uncapped" big />
               <Metric label="Minimum stake" value="10,000" unit="NAV" big />
             </ParamGroup>

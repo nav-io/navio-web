@@ -19,7 +19,7 @@ export default function Stake() {
           <span className="gradient-text-green">Stake NAV. Secure the network.</span>
         </h1>
         <p className="text-white/60 max-w-2xl mx-auto text-lg">
-          Stake directly instead of delegating. You hold the keys, run the staker binary on
+          Stake directly; run your own node. You hold the keys, run the staker binary on
           hardware you control, and produce blocks while the protocol keeps your validator
           identity and stake amount hidden from everyone else on the network.
         </p>
@@ -35,18 +35,16 @@ export default function Stake() {
         />
         <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           <Spec icon={<Cpu className="w-5 h-5" />} label="CPU">
-            4+ vCPU x86-64 with AVX2, or ARMv8 with crypto extensions. Pairings on BLS12-381 are the
-            bottleneck — modern chips handle it in ms.
+            4+ vCPU x86-64 with AVX2, or ARMv8 with crypto extensions.
           </Spec>
-          <Spec icon={<HardDrive className="w-5 h-5" />} label="Storage">
-            80+ GB NVMe SSD, unpruned. Random I/O matters more than raw size during sync.
+          <Spec icon={<HardDrive className="w-5 h-5" />} label="Storage & Memory">
+            40+ GB NVMe SSD. 8GB+ RAM.
           </Spec>
           <Spec icon={<Wifi className="w-5 h-5" />} label="Network">
-            100 Mbps symmetric with low jitter. .
+            100 Mbps symmetric with low jitter.
           </Spec>
           <Spec icon={<Terminal className="w-5 h-5" />} label="OS & time">
-            Linux or macOS. NTP configured — skew must stay within ±2 s of wall time, or the
-            kernel-hash timestamp won't validate.
+            Linux or macOS. NTP configured.
           </Spec>
         </div>
       </section>
@@ -88,7 +86,7 @@ export default function Stake() {
 {`git clone https://github.com/nav-io/navio-core.git
 cd navio-core
 ./autogen.sh
-./configure --enable-wallet --with-gui=no
+./configure
 make -j$(nproc)
 sudo make install  # optional`}
           </pre>
@@ -132,7 +130,7 @@ sudo make install  # optional`}
             </pre>
           </Numbered>
 
-          <Numbered n="03" title="Unlock for staking only">
+          {/* <Numbered n="03" title="Unlock for staking only">
             <pre className="mono text-[11px] text-white/70 bg-black/40 rounded-lg p-3 overflow-x-auto">
 {`navio-cli walletpassphrase <password> <timeout> true`}
             </pre>
@@ -140,9 +138,9 @@ sudo make install  # optional`}
               The trailing <code className="mono text-neon-blue">true</code> unlocks the wallet for staking only —
               spend authority stays locked.
             </p>
-          </Numbered>
+          </Numbered> */}
 
-          <Numbered n="04" title="Lock stake">
+          <Numbered n="03" title="Lock stake">
             <pre className="mono text-[11px] text-white/70 bg-black/40 rounded-lg p-3 overflow-x-auto">
 {`navio-cli stakelock 10000`}
             </pre>
@@ -152,7 +150,7 @@ sudo make install  # optional`}
             </p>
           </Numbered>
 
-          <Numbered n="05" title="Run the staker daemon">
+          <Numbered n="04" title="Run the staker daemon">
             <pre className="mono text-[11px] text-white/70 bg-black/40 rounded-lg p-3 overflow-x-auto">
 {`navio-staker -wallet=staker`}
             </pre>

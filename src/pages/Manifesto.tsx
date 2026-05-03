@@ -63,7 +63,7 @@ export default function Manifesto() {
         {/* BLOCK 2 */}
         <section className="space-y-6">
           <SectionHeading
-            eyebrow="Why base-layer matters"
+            eyebrow=" "
             title={<>Opt-in privacy is a trap.</>}
             center={false}
             gradient="blue"
@@ -79,8 +79,7 @@ export default function Manifesto() {
             Navio doesn't have a shielded pool. It has a shielded <em>chain</em>. The anonymity set
             of any transaction is every other transaction in the same block. There is no unshielded
             option to contrast with. Privacy
-            isn't a signal — it's the default, like HTTPS on the web in 2026, like encrypted messaging
-            on your phone. Unremarkable. Expected. The way things should have been from day one.
+            isn't a signal — it's the default.
           </p>
         </section>
 
@@ -100,8 +99,8 @@ export default function Manifesto() {
             chain's liveness and neutrality.
           </p>
           <p className="text-white/75 leading-relaxed">
-            Proof-of-Private-Stake takes that surface away. Who produced the block? Unknown. How much
-            stake did they use? Unknown. What address will receive the next reward? Unknown. This
+            Proof-of-Private-Stake makes surveillance harder. Who produced the block?  How much
+            stake did they use? What address will receive the next reward? We obfuscate the most important layer of a blockchain: consensus. This
             isn't paranoia. This is load-bearing — privacy for the validator is privacy for every user
             who relies on the network remaining censorship-resistant.
           </p>
@@ -110,24 +109,21 @@ export default function Manifesto() {
         {/* BLOCK 4 */}
         <section className="space-y-6">
           <SectionHeading
-            eyebrow="Why open source matters"
+            eyebrow=" "
             title={<>Transparency is the only credible foundation for secrecy.</>}
             center={false}
             gradient="green"
           />
           <p className="text-white/75 leading-relaxed">
             The only way to know that the cryptography behind your transactions does what its
-            authors claim is to read the code, or
-            to read the work of others who read the code. Navio is MIT-licensed from genesis. Every
-            consensus rule, every cryptographic primitive, every wallet heuristic is public. Audit it.
-            Fork it. Port it. Attack it.
+            authors claim is to read the code. Navio is MIT-licensed from genesis. Audit it.
+            Fork it. Port it. Break it. Fix it.
           </p>
           <p className="text-white/75 leading-relaxed">
             A fair launch is part of the same ethic. No pre-mine. No ICO. No VC allocation with
             four-year vesting. No team tokens waiting to dump. The supply that exists on the chain
-            today was earned — by users, by validators, by people who mined or staked or held through
-            a decade of market weather. You cannot buy your way to controlling this network. You can
-            only earn your way.
+            today was earned, bought from the open market — by users, by stakers, by people who staked or held it through
+            a decade of market weather. You cannot buy your way to controlling this network.
           </p>
         </section>
 
@@ -169,8 +165,7 @@ export default function Manifesto() {
               regulators drafting mass-surveillance statutes under the banner of "consumer
               protection." It applies to wallet vendors shipping closed-source spyware, to
               foundations that trade user data for favorable regulatory treatment, and to
-              "privacy" projects that fold the moment a subpoena arrives. Pick a side. We picked
-              ours in 2014.
+              "privacy" projects that fold the moment their soul can be sold. But also to market participants who will try to speculate on the value of NAV without alignment with our principles. We don't welcome you. 
             </p>
           </div>
         </section>
@@ -178,7 +173,7 @@ export default function Manifesto() {
         {/* BLOCK 6 — NO MARKETING */}
         <section className="space-y-6">
           <SectionHeading
-            eyebrow="No budget, no banners, no shilling"
+            eyebrow=" "
             title={<>We don't pay for attention. The community carries the torch.</>}
             center={false}
             gradient="green"
@@ -190,20 +185,15 @@ export default function Manifesto() {
             things that actually matter.
           </p>
           <p className="text-white/75 leading-relaxed">
-            The people who believe in Navio spread the message. Stakers, developers, contributors,
-            long-time holders who have stood by us for a decade. They write the posts. They run
-            the channels. They answer questions at 2am. That's not a growth strategy — that's a
-            community. And it is worth more than any marketing budget.
-          </p>
-          <p className="text-white/75 leading-relaxed italic text-white/60">
-            If you are reading this because someone you trust told you to, thank them. That's how
-            this works.
+            The people who believe in Navio will spread the message. Stakers, developers, contributors,
+            long-time holders who have stood by us for a decade, privacy advocates. They will write the posts. They will run
+            the channels. 
           </p>
         </section>
 
         {/* VALUES */}
         <section>
-          <SectionHeading eyebrow="What we stand for" title={<>Our principles, plainly stated</>} gradient="blue" />
+          <SectionHeading eyebrow=" " title={<>TLDR: Our principles</>} gradient="blue" />
           <div className="mt-8 space-y-3">
             {PRINCIPLES.map((p, i) => (
               <div key={i} className="glow-card">
@@ -223,8 +213,7 @@ export default function Manifesto() {
             <h2 className="text-3xl font-semibold gradient-text-pink mb-4">Come stand with us.</h2>
             <p className="text-white/65 max-w-xl mx-auto mb-8 leading-relaxed">
               We are not a foundation. We are not a company. We are a community of idealists,
-              developers, and stakers united by the conviction that financial privacy is a human right
-              — and willing to write the code to defend it.
+              developers, and stakers united by the conviction that financial privacy is a human right.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <a href="https://discord.com/invite/eBQ2QUkVXy" target="_blank" rel="noreferrer" className="neon-btn">
@@ -251,31 +240,31 @@ export default function Manifesto() {
 const PRINCIPLES = [
   {
     title: 'Privacy by default, not by opt-in',
-    body: 'Every transaction on the canonical chain is confidential. No shielded pools. No two-tier ledger. The anonymity set of any transaction is every other transaction in the same block.',
+    body: 'Every transaction on the chain is confidential. No shielded pools. No two-tier ledger. The anonymity set of any transaction is every other transaction in the same block.',
   },
   {
     title: 'No KYC, no permission, no whitelist',
-    body: 'Anyone can run a node, stake coins, send a transaction, or build an app. If the protocol needs your identity to function, we have already lost.',
+    body: 'Anyone can run a node, stake coins, send a transaction, or build an app.',
   },
   {
     title: 'Fair launch, no pre-mine, no ICO',
-    body: 'No team tokens. No VC allocation. No foundation treasury carved out of supply. The chain started at zero and grew through use.',
+    body: 'No team tokens. No VC allocation. No treasury. We don\'t print coins "on demand".',
   },
   {
     title: 'Open source under MIT',
-    body: 'Every consensus rule, every cryptographic primitive, every wallet heuristic is public. You can audit it, you can fork it. Closed-source privacy software is an oxymoron.',
+    body: 'Every piece of software is public. You can audit it, you can fork it.',
   },
   {
     title: 'No central authority',
-    body: 'No company controls Navio. No foundation. No single individual can veto a consensus change. Rules live in code, changes ship through community agreement, and forks are always an option.',
+    body: 'No entity controls Navio. No foundation. No single individual can veto a consensus change outside of the consensus rules. Rules live in code, changes ship through community agreement, and forks are always an option.',
   },
   {
     title: 'No listing fees, no CEX tribute',
-    body: 'We do not pay centralized exchanges to trade our coin. Atomic swaps and DEXs work. Custodial venues demanding fees, KYC, and data hand-over are not partners — they are the problem.',
+    body: 'We do not pay centralized exchanges to trade our coin. Atomic swaps and DEXs work. Custodial venues demanding fees, KYC and bribes are part of the problem.',
   },
   {
     title: 'Enemies of privacy are not our friends',
-    body: 'Chain-analysis firms, surveillance-aligned regulators, KYC-mandating custodians, spyware wallets. Pick a side. We picked ours in 2014.',
+    body: 'Chain-analysis firms, surveillance-aligned regulators, KYC-mandating custodians, spyware wallets, market speculators. Go away.',
   },
   {
     title: 'No paid marketing, no bought attention',
@@ -283,6 +272,6 @@ const PRINCIPLES = [
   },
   {
     title: 'Fight financial surveillance',
-    body: 'The surveillance financial system is not a neutral fact. It is an active tool of coercion, and private money is a precondition for resisting it. That fight is the reason Navio exists.',
+    body: 'The surveillance financial system is not a neutral fact. It is an active tool of coercion, and private money is a tool of resistance.',
   },
 ];

@@ -20,8 +20,7 @@ export default function Ecosystem() {
             <span className="gradient-text">Wallets, tools, and apps</span>
           </h1>
           <p className="text-white/60 max-w-2xl mx-auto text-lg">
-            Everything running on or around Navio today. Open source, self-hostable, auditable —
-            because that's the only acceptable foundation for privacy software.
+            Open source, self-hostable.
           </p>
         </section>
 
@@ -52,6 +51,17 @@ export default function Ecosystem() {
                 { label: 'Source', href: 'https://github.com/navio-x/navio-x', icon: true },
               ]}
             />
+          </div>
+        </section>
+        <section id="devs">
+          <SectionHeading
+            eyebrow="02 — Development"
+            title={<>Build your own</>}
+            center={false}
+            gradient="blue"
+          />
+          <div className="mt-10 grid md:grid-cols-2 gap-5">
+
             <WalletCard
               name="Navio SDK"
               desc="TypeScript SDK for building browser and Node.js wallets. Key management, transaction construction, view-key audit wallets, everything a builder needs."
@@ -70,18 +80,26 @@ export default function Ecosystem() {
                 { label: 'Source', href: 'https://github.com/nav-io/libblsct-bindings', icon: true },
               ]}
             />
+            <WalletCard
+              name="Developer Docs"
+              links={[
+                { label: 'Docs', href: 'https://docs.nav.io' },
+              ]}
+              desc="Protocol specs, RPC reference, SDK guides, running a node, BLSCT cryptographic deep dive. Auto-generated from source so it doesn't drift."
+              tags={['Docs', 'Source']}
+            />
           </div>
         </section>
 
         {/* APPS */}
         <section id="apps">
           <SectionHeading
-            eyebrow="02 — Apps"
+            eyebrow="03 — Tools"
             title={<>Live right now</>}
             center={false}
             gradient="pink"
           />
-          <div className="mt-10 grid md:grid-cols-3 gap-5">
+          <div className="mt-10 grid md:grid-cols-2 gap-5">
             <AppCard
               title="Block Explorer"
               url="https://blocks.nav.io"
@@ -91,11 +109,6 @@ export default function Ecosystem() {
               title="Bridge"
               url="/bridge"
               desc="Migrate legacy Navcoin NAV to native NAVIO during the swap window. Live countdown to mainnet activation."
-            />
-            <AppCard
-              title="Developer Docs"
-              url="https://docs.nav.io"
-              desc="Protocol specs, RPC reference, SDK guides, running a node, BLSCT cryptographic deep dive. Auto-generated from source so it doesn't drift."
             />
           </div>
         </section>
@@ -186,6 +199,10 @@ const REPOS = [
   {
     name: 'navio-developer-docs', url: 'https://github.com/nav-io/navio-developer-docs',
     desc: 'Source of docs.nav.io. Contributions welcome.'
+  },
+  {
+    name: 'navio-web', url: 'https://github.com/nav-io/navio-web',
+    desc: 'Source of nav.io. Contributions welcome.'
   },
 ];
 

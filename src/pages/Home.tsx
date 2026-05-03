@@ -46,9 +46,9 @@ export default function Home() {
           </div>
 
           <p className="text-base sm:text-lg text-white/55 max-w-2xl mx-auto leading-relaxed">
-            Navio is a Layer-1 where every transaction is confidential by default — amounts,
-            senders, receivers, tokens. Secured by Proof-of-Private-Stake. Open source since 2014.
-            No pre-mine. No pre-sale. Fair and verifiable.
+            Navio is a blockahin where every transaction is confidential by default — amounts,
+            senders, receivers. Secured by Proof-of-Private-Stake. Open source since 2014.
+            Community-owned. Fair and verifiable.
           </p>
 
           <div className="flex flex-wrap gap-3 justify-center pt-6">
@@ -71,32 +71,30 @@ export default function Home() {
       <section id="mission" className="max-w-6xl mx-auto px-4 pt-24 sm:pt-32">
         <SectionHeading
           eyebrow="Our mission"
-          title={<>Privacy is a right. We are building the plumbing for it.</>}
+          title={<>Privacy is a right. We are building the tools for it.</>}
           gradient="green"
         />
         <div className="mt-10 grid md:grid-cols-3 gap-5">
           <div className="glow-card">
             <div className="mono text-[10px] tracking-[0.22em] uppercase text-neon-blue/80 mb-2">01 · Default</div>
             <p className="text-white/70 leading-relaxed text-sm">
-              Confidentiality is enforced at the base layer, on the canonical ledger. Amounts,
-              token identifiers, and counterparties are hidden by default. There is no optional
-              shielded mode to opt into and no separate privacy sidechain to bridge through.
+              Confidentiality is enforced at the base layer. Amounts,
+              and counterparties are hidden by default. There is no optional
+              shielded mode to opt into and no separate sidechain to bridge through.
             </p>
           </div>
           <div className="glow-card">
             <div className="mono text-[10px] tracking-[0.22em] uppercase text-neon-pink/80 mb-2">02 · Permissionless</div>
             <p className="text-white/70 leading-relaxed text-sm">
               The protocol is open source and runs on independently operated nodes. Anyone can
-              validate, transact, or build on top without asking permission — and no one, including
-              the team that built it, can pause it, censor it, or roll it back.
+              validate, transact, or build on top without asking permission — and no one, can pause it, censor it, or roll it back.
             </p>
           </div>
           <div className="glow-card">
             <div className="mono text-[10px] tracking-[0.22em] uppercase text-neon-green/80 mb-2">03 · Political</div>
             <p className="text-white/70 leading-relaxed text-sm">
               Financial surveillance is a tool of coercion. When every payment is observable,
-              dissent gets expensive and association gets risky. We don't think the chain that
-              handles your money should make it easy for the entities watching you.
+              dissent gets expensive and freedom gets threatened. The tech stack handling your money bears the responsibility of protecting your privacy.
             </p>
           </div>
         </div>
@@ -105,45 +103,9 @@ export default function Home() {
       {/* PILLARS — feature cards */}
       <section id="pillars" className="max-w-7xl mx-auto px-4 pt-24 sm:pt-32">
         <SectionHeading
-          eyebrow="Pillars"
+          eyebrow=""
           title={<>What makes Navio different</>}
-          subtitle="Six properties that define the chain — and set the bar for anyone trying to do private money right."
-        />
-        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          <FeatureCard icon={<Shield className="w-5 h-5" />} title="NAV — Private Coin" accent="blue">
-            NAV is the native asset. Every send hides the amount, the sender, the receiver, and the
-            token type. Confirmations in two minutes, fees in fractions of a cent.
-          </FeatureCard>
-          <FeatureCard icon={<Lock className="w-5 h-5" />} title="BLSCT Protocol" accent="purple">
-            Navio's privacy engine: Pedersen commitments for amounts, stealth addresses via double
-            public keys, and aggregated BLS signatures — smaller proofs, bigger anonymity set.
-          </FeatureCard>
-          <FeatureCard icon={<Eye className="w-5 h-5" />} title="Proof-of-Private-Stake" accent="pink">
-            A consensus where both the validator's identity and the size of their stake are
-            cryptographically hidden, so no public list of operators or stake amounts can be
-            assembled from on-chain data.
-          </FeatureCard>
-          <FeatureCard icon={<Coins className="w-5 h-5" />} title="Private Tokens" accent="green">
-            Mint your own tokens where balances and transfer amounts are confidential. Same
-            privacy guarantees as NAV, same stealth-address plumbing, no new cryptography required.
-          </FeatureCard>
-          <FeatureCard icon={<Fingerprint className="w-5 h-5" />} title="Private NFTs" accent="purple">
-            Own digital goods without publishing your collection on a public ledger. Authenticity
-            and uniqueness can still be verified without revealing the holder.
-          </FeatureCard>
-          <FeatureCard icon={<Network className="w-5 h-5" />} title="Private dApps" accent="blue">
-            Build confidential applications on a chain that already enforces privacy at the
-            consensus layer, so you don't have to add it at the application layer.
-          </FeatureCard>
-        </div>
-      </section>
-
-      {/* ECOSYSTEM BLURB */}
-      <section className="max-w-6xl mx-auto px-4 pt-24 sm:pt-32">
-        <SectionHeading
-          eyebrow="Ecosystem"
-          title={<>Infrastructure for privacy</>}
-          subtitle="The base layer for the applications, issuers, and integrators that care about privacy."
+          subtitle=""
         />
         <div className="mt-12 grid md:grid-cols-2 gap-6">
           <div className="glow-card text-center space-y-6">
@@ -151,10 +113,11 @@ export default function Home() {
               <img src="/illustrations/private-payments.jpg" alt="" />
             </div>
             <div className="space-y-3">
-              <h3 className="text-2xl font-semibold gradient-text">Private payments</h3>
+              <h3 className="text-2xl font-semibold gradient-text">NAV</h3>
               <p className="text-sm text-white/65 leading-relaxed">
-                NAV transfers are confidential by default. The amount, the counterparty stay off the public ledger; an outside observer can see that a
-                transaction occurred but cannot reconstruct payment history from chain data nor the transaction details.
+                NAV is Navio&apos;s native asset with ~two-minute confirmations and
+                negligible fees. Solid store of value, gas for your transfers and collateral for your stakes. Roughly 2.6% annualized
+                inflation burned fees.
               </p>
             </div>
           </div>
@@ -163,20 +126,13 @@ export default function Home() {
               <img src="/illustrations/interoperability-defi.jpg" alt="" />
             </div>
             <div className="space-y-3">
-              <h3 className="text-2xl font-semibold gradient-text-pink">Interoperability & DeFi</h3>
+              <h3 className="text-2xl font-semibold gradient-text-pink">BLSCT</h3>
               <p className="text-sm text-white/65 leading-relaxed">
-                The protocol ships with atomic-swap primitives and BLSCT signature aggregation,
-                which together provide the groundwork for trustless swaps with Bitcoin, Litecoin,
-                and other compatible chains.
+                Navio's privacy engine: Pedersen commitments for amounts, stealth addresses via double
+                public keys, and aggregated BLS signatures — smaller proofs, anonymity set at the block level.
               </p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* CONSENSUS */}
-      <section className="max-w-6xl mx-auto px-4 pt-24 sm:pt-32">
-        <div className="grid md:grid-cols-2 gap-6">
           <div className="glow-card text-center space-y-6">
             <div className="cyber-orb">
               <img src="/illustrations/pops.jpg" alt="" />
@@ -184,7 +140,7 @@ export default function Home() {
             <div className="space-y-3">
               <h3 className="text-2xl font-semibold gradient-text">Proof-of-Private-Stake</h3>
               <p className="text-sm text-white/65 leading-relaxed">
-                Validators produce a zero-knowledge proof that they control an eligible staked
+                Stakers produce a zero-knowledge proof that they control an eligible staked
                 output and that the proof is bound to the current block. The proof reveals neither
                 <em> which</em> output is being used nor <em>how much</em> is staked.
               </p>
@@ -197,23 +153,26 @@ export default function Home() {
             <div className="space-y-3">
               <h3 className="text-2xl font-semibold gradient-text-green">Decentralized &amp; autonomous</h3>
               <p className="text-sm text-white/65 leading-relaxed">
-                Navio is maintained by an open community of contributors. There is no foundation
-                that owns the name, no central company that controls the roadmap, and no industry insiders with privileged positions in the project. Updates ship through
-                rough consensus among contributors and node operators.
+                Navio is maintained by an open community of contributors, self-funded by voluntary contributions. There is no entity
+                that owns it, no central company that controls the roadmap. Updates ship through
+                rough consensus among contributors and the network of stakers.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* PLATFORM */}
-      <section className="max-w-6xl mx-auto px-4 pt-24 sm:pt-32">
+
+      {/* ECOSYSTEM BLURB */}
+      < section className="max-w-6xl mx-auto px-4 pt-24 sm:pt-32" >
         <SectionHeading
-          eyebrow="Navio as a platform"
-          title={<>Built for more than payments</>}
-          subtitle="Navio is a programmable privacy layer. Tokens, NFTs, swaps, and applications all inherit the same confidentiality guarantees as native NAV transfers."
-          gradient="pink"
+          eyebrow="Ecosystem"
+          title={<>Infrastructure for privacy</>}
+          subtitle="The base layer for those who care about privacy."
         />
+
+
+        {/* PLATFORM */}
         <div className="mt-12 grid md:grid-cols-2 gap-6">
           <div className="glow-card text-center space-y-6">
             <div className="cyber-orb">
@@ -223,7 +182,7 @@ export default function Home() {
               <h3 className="text-2xl font-semibold gradient-text">Private tokens</h3>
               <p className="text-sm text-white/65 leading-relaxed">
                 Anyone can mint a token on Navio. Balances are Pedersen commitments. Amounts are
-                hidden. The token's identifier is public — balances and flows are not. Great for
+                hidden. Great for
                 stablecoins, wrapped assets, governance units, or anything else that should not be a
                 public spreadsheet.
               </p>
@@ -288,7 +247,7 @@ export default function Home() {
           />
           <AppCard
             title="Bridge"
-            url="/bridge"
+            url="/swap"
             desc="Migrate legacy Navcoin NAV to native NAVIO during the swap window. Live countdown to mainnet activation."
             icon={<GitBranch className="w-5 h-5" />}
           />
@@ -329,9 +288,9 @@ export default function Home() {
           />
           <Milestone
             status="done"
-            title="Pre-mainnet hardening"
+            title="Pre-mainnet test"
             date="2026"
-            body="Five targeted consensus patches: saturating min-value clamp, grinding-surface reduction (time bucketing + chain-work binding), G1 subgroup checks on deserialization, long-range-attack checkpoints."
+            body="Seven different test networks. Hardening and stress tests. Ready for launch."
           />
           <Milestone
             status="active"
@@ -344,35 +303,34 @@ export default function Home() {
 
       {/* WHAT ELSE */}
       <section className="max-w-6xl mx-auto px-4 pt-24 sm:pt-32">
-        <SectionHeading eyebrow="Essentials" title={<>What else you should know</>} />
+        <SectionHeading eyebrow="" title={<>Earn by securing</>} />
         <div className="mt-12 grid md:grid-cols-3 gap-5">
           <div className="glow-card overflow-hidden p-0">
-            <img src="/illustrations/born-in-2014.jpg" alt="" className="w-full h-64 object-cover" />
+            <img src="/illustrations/pops.jpg" alt="" className="w-full h-64 object-cover" />
             <div className="p-6">
-              <h3 className="text-lg font-semibold text-white mb-2">Born in 2014</h3>
+              <h3 className="text-lg font-semibold text-white mb-2">Proof-of-stake over mining</h3>
               <p className="text-sm text-white/60">
-                Launched as Navcoin with a fair distribution — no pre-mine, no ICO. Became Navio in
-                2026 when we replaced the consensus with PoPS.
+                Staking ties security to locked economic weight instead of burning electricity. Incentives go to people who hold the asset and
+                run honest nodes — free for everyone to participate.
               </p>
             </div>
           </div>
-          <div className="glow-card overflow-hidden p-0">
-            <img src="/illustrations/open-source.jpg" alt="" className="w-full h-64 object-cover" />
-            <div className="p-6">
-              <h3 className="text-lg font-semibold text-white mb-2">Open source</h3>
-              <p className="text-sm text-white/60">
-                MIT-licensed and developed in public. The full source, including the cryptography
-                and consensus code, is on GitHub for anyone to audit, fork, or reuse.
-              </p>
-            </div>
-          </div>
+          
           <div className="glow-card overflow-hidden p-0">
             <img src="/illustrations/passive-income.jpg" alt="" className="w-full h-64 object-cover" />
             <div className="p-6">
-              <h3 className="text-lg font-semibold text-white mb-2">Earn by securing</h3>
+              <h3 className="text-lg font-semibold text-white mb-2">How to get involved</h3>
               <p className="text-sm text-white/60">
-                Lock 10,000 NAV, run the staker binary, earn block rewards. No delegation required,
-                no custodian involved — your keys, your stake, your coins.
+                Lock 10,000 NAV, run the staker binary, earn 8 NAVIO per each block. No delegation required, you run your own infra — your keys, your stake, your coins.
+              </p>
+            </div>
+          </div>
+          <div className="glow-card overflow-hidden p-0">
+            <img src="/illustrations/community.jpg" alt="" className="w-full h-64 object-cover" />
+            <div className="p-6">
+              <h3 className="text-lg font-semibold text-white mb-2">Strengthen the network</h3>
+              <p className="text-sm text-white/60">
+                Your participation matters. Each added staker makes our network more resilient to external attacks and stronger and increases the anonymity set for all participants.
               </p>
             </div>
           </div>
@@ -390,7 +348,7 @@ export default function Home() {
           </h2>
           <p className="text-white/65 max-w-xl mx-auto mb-8">
             If our vision resonates with you, come build with us — or at minimum, come argue with
-            us. Either way you'll learn something.
+            us. 
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <a href="https://discord.com/invite/eBQ2QUkVXy" target="_blank" rel="noreferrer" className="neon-btn">
