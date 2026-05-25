@@ -68,7 +68,7 @@ export default function Home() {
       </section>
 
       {/* MISSION */}
-      <section id="mission" className="max-w-6xl mx-auto px-4 pt-24 sm:pt-32">
+      {/* <section id="mission" className="max-w-6xl mx-auto px-4 pt-24 sm:pt-32">
         <SectionHeading
           eyebrow="Our mission"
           title={<>Privacy is a right. We are building the tools for it.</>}
@@ -98,7 +98,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* PILLARS — feature cards */}
       <section id="pillars" className="max-w-7xl mx-auto px-4 pt-24 sm:pt-32">
