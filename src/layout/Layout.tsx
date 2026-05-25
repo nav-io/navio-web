@@ -10,7 +10,7 @@ export default function Layout() {
   const [searchParams] = useSearchParams();
 
   /** `?hexagon` (any value): honeycomb. Otherwise legacy square mesh. */
-  const hexagonBg = searchParams.has('hexagon');
+  const hexagonBg = !!searchParams.has('hexagon');
 
   useEffect(() => {
     window.scrollTo(0, 0);
