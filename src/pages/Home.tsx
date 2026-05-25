@@ -46,9 +46,9 @@ export default function Home() {
           </div>
 
           <p className="text-base sm:text-lg text-white/55 max-w-2xl mx-auto leading-relaxed">
-            Navio is a blockchain where every transaction is confidential by default: amounts,
-            senders and receivers are hidden. Secured by Proof-of-Private-Stake. Open source since
-            2014, community-owned, verifiable.
+            Navio is private money for the internet. Send and receive without anyone seeing
+            amounts, senders or receivers. No company runs it. No one can freeze it. Open since
+            2014.
           </p>
 
           <div className="flex flex-wrap gap-3 justify-center pt-6">
@@ -113,11 +113,10 @@ export default function Home() {
               <img src="/illustrations/private-payments.jpg" alt="" />
             </div>
             <div className="space-y-3">
-              <h3 className="text-2xl font-semibold gradient-text">NAV</h3>
+              <h3 className="text-2xl font-semibold gradient-text">Money you can actually own</h3>
               <p className="text-sm text-white/65 leading-relaxed">
-                NAV is Navio&apos;s native asset with ~two-minute confirmations and
-                negligible fees. Solid store of value, gas for your transfers and collateral for your stakes. Roughly 2.6% annualized
-                inflation burned fees.
+                NAV is the coin you send and hold. Confirms in about two minutes, fees are near
+                zero. Use it to pay, save or earn rewards by helping secure the network.
               </p>
             </div>
           </div>
@@ -126,10 +125,13 @@ export default function Home() {
               <img src="/illustrations/interoperability-defi.jpg" alt="" />
             </div>
             <div className="space-y-3">
-              <h3 className="text-2xl font-semibold gradient-text-pink">BLSCT</h3>
+              <h3 className="text-2xl font-semibold gradient-text-pink">Private by default</h3>
               <p className="text-sm text-white/65 leading-relaxed">
-                Navio's privacy engine: Pedersen commitments for amounts, stealth addresses via double
-                public keys and aggregated BLS signatures. Smaller proofs, anonymity set at the block level.
+                Every transaction hides amounts, sender and receiver. Not an opt-in mode, not a
+                separate app. Privacy is the only setting.{' '}
+                <Link to="/technology" className="text-neon-pink/80 hover:text-neon-pink underline-offset-4 hover:underline">
+                  How it works →
+                </Link>
               </p>
             </div>
           </div>
@@ -138,11 +140,10 @@ export default function Home() {
               <img src="/illustrations/pops.jpg" alt="" />
             </div>
             <div className="space-y-3">
-              <h3 className="text-2xl font-semibold gradient-text">Proof-of-Private-Stake</h3>
+              <h3 className="text-2xl font-semibold gradient-text">Stakers, not miners</h3>
               <p className="text-sm text-white/65 leading-relaxed">
-                Stakers produce a zero-knowledge proof that they control an eligible staked
-                output and that the proof is bound to the current block. The proof reveals neither
-                <em> which</em> output is being used nor <em>how much</em> is staked.
+                The network is secured by people running stakers, not power-hungry mining rigs.
+                Stakers stay anonymous and earn NAV for keeping the chain honest.
               </p>
             </div>
           </div>
@@ -151,11 +152,10 @@ export default function Home() {
               <img src="/illustrations/decentralized-autonomous.jpg" alt="" />
             </div>
             <div className="space-y-3">
-              <h3 className="text-2xl font-semibold gradient-text-green">Decentralized &amp; autonomous</h3>
+              <h3 className="text-2xl font-semibold gradient-text-green">No company. No boss.</h3>
               <p className="text-sm text-white/65 leading-relaxed">
-                Navio is maintained by an open community of contributors, self-funded by voluntary contributions. There is no entity
-                that owns it, no central company that controls the roadmap. Updates ship through
-                rough consensus among contributors and the network of stakers.
+                Navio is built and funded by an open community. No foundation owns it, no investors
+                control the roadmap. It moves forward when contributors and stakers agree.
               </p>
             </div>
           </div>
@@ -181,10 +181,9 @@ export default function Home() {
             <div className="space-y-3">
               <h3 className="text-2xl font-semibold gradient-text">Private tokens</h3>
               <p className="text-sm text-white/65 leading-relaxed">
-                Anyone can mint a token on Navio. Balances are Pedersen commitments. Amounts are
-                hidden. Great for
-                stablecoins, wrapped assets, governance units or anything else that should not be a
-                public spreadsheet.
+                Anyone can issue a token on Navio with balances hidden by default. Useful for
+                stablecoins, wrapped assets, governance, or anything that should not be a public
+                spreadsheet.
               </p>
             </div>
           </div>
@@ -208,9 +207,8 @@ export default function Home() {
             <div className="space-y-3">
               <h3 className="text-2xl font-semibold gradient-text-green">Private DEX</h3>
               <p className="text-sm text-white/65 leading-relaxed">
-                BLSCT aggregation enables trustless swaps between NAV, tokens and wrapped external
-                assets in a single transaction. No order book surveillance, no front-running bots,
-                no MEV. One tx in, matched tx out, both parties satisfied.
+                Swap NAV, tokens and wrapped assets directly between wallets. No order book to
+                watch you, no bots front-running your trade. You ask, you get a price, you settle.
               </p>
             </div>
           </div>
@@ -275,27 +273,21 @@ export default function Home() {
           />
           <Milestone
             status="done"
-            title="PoPS testnet / Phase 1"
+            title="Private staking goes live"
             date="July 2024"
-            body="Public testnet running Proof-of-Private-Stake went live and started producing stable blocks."
+            body="First public test network where validators stake while protecting their privacy."
           />
           <Milestone
             status="done"
-            title="Bulletproofs++ & private tokens"
+            title="Private tokens and NFTs"
             date="Dec 2024 – 2025"
-            body="New range-proof scheme deployed; private token and NFT primitives shipped to testnet."
-          />
-          <Milestone
-            status="done"
-            title="Pre-mainnet test"
-            date="2026"
-            body="Seven different test networks. Hardening and stress tests. Ready for launch."
+            body="Anyone can now issue tokens or NFTs on Navio with amounts and ownership hidden."
           />
           <Milestone
             status="active"
             title="Mainnet launch"
-            date="Jun–Jul 2026"
-            body="Activation at Navcoin height 10,500,000. Initial supply ~81.7M NAV migrated 1:1. Swap window closes at height 11,000,000."
+            date="3 July 2026"
+            body="Navio goes live. Existing Navcoin holders can migrate their NAV 1:1 through the bridge."
           />
         </ol>
       </section>
@@ -320,7 +312,7 @@ export default function Home() {
             <div className="p-6">
               <h3 className="text-lg font-semibold text-white mb-2">How to get involved</h3>
               <p className="text-sm text-white/60">
-                Lock 10,000 NAV, run the staker binary, earn 8 NAVIO per each block. No delegation required, you run your own infra. Your keys, your stake, your coins.
+                Lock 10,000 NAV, run the staker on your own machine, earn 8 NAV per block you produce. No middleman. Your keys, your stake, your coins.
               </p>
             </div>
           </div>
