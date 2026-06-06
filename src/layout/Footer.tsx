@@ -19,7 +19,7 @@ export default function Footer() {
                  className="w-9 h-9 rounded-full border border-white/10 bg-white/[0.03] hover:border-neon-blue/50 hover:bg-white/[0.06] flex items-center justify-center text-white/60 hover:text-white transition">
                 <MessageCircle className="w-4 h-4" />
               </a>
-              <a href="https://x.com/nav_io" target="_blank" rel="noreferrer"
+              <a href="https://x.com/navio_official" target="_blank" rel="noreferrer"
                  className="w-9 h-9 rounded-full border border-white/10 bg-white/[0.03] hover:border-neon-blue/50 hover:bg-white/[0.06] flex items-center justify-center text-white/60 hover:text-white transition">
                 <Twitter className="w-4 h-4" />
               </a>
@@ -53,7 +53,7 @@ export default function Footer() {
             <h3 className="mono text-[10px] tracking-[0.28em] uppercase text-white/40 mb-4">Community</h3>
             <ul className="space-y-2.5 text-sm">
               <li><a href="https://discord.com/invite/eBQ2QUkVXy" target="_blank" rel="noreferrer" className="text-white/70 hover:text-white transition">Discord</a></li>
-              <li><a href="https://x.com/nav_io" target="_blank" rel="noreferrer" className="text-white/70 hover:text-white transition">Twitter / X</a></li>
+              <li><a href="https://x.com/navio_official" target="_blank" rel="noreferrer" className="text-white/70 hover:text-white transition">Twitter / X</a></li>
               <li><a href="https://github.com/nav-io" target="_blank" rel="noreferrer" className="text-white/70 hover:text-white transition">GitHub</a></li>
               <li><a href="https://navio.medium.com" target="_blank" rel="noreferrer" className="text-white/70 hover:text-white transition">Medium</a></li>
             </ul>

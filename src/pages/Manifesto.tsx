@@ -220,7 +220,7 @@ export default function Manifesto() {
                 <MessageCircle className="w-4 h-4" />
                 Join Discord
               </a>
-              <a href="https://x.com/nav_io" target="_blank" rel="noreferrer" className="ghost-btn">
+              <a href="https://x.com/navio_official" target="_blank" rel="noreferrer" className="ghost-btn">
                 <Twitter className="w-4 h-4" />
                 Follow on X
               </a>
