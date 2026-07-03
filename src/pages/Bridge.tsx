@@ -1,82 +1,16 @@
-import { useEffect, useState } from 'react';
 import { ExternalLink } from 'lucide-react';
-
-/** The Navcoin block at which the Navio mainnet activates and the swap window opens. */
-const TARGET_BLOCK = 10_500_000;
-/** Historical Navcoin Proof-of-Stake block time. */
-const BLOCK_TIME_SEC = 30;
-/** Navcoin explorer block API. We only need the latest block, so size=1. */
-const API_URL = 'https://explorer.navcoin.org/api/block?sort=height:desc&size=1&page=1';
-/** Poll cadence. Matches the expected block interval. */
-const POLL_MS = 30_000;
-
-interface Tip {
-  height: number;
-  /** unix ms */
-  at: number;
-}
+import {
+  useSwapStatus,
+  TARGET_BLOCK,
+  BLOCK_TIME_SEC,
+  POLL_MS,
+} from '../hooks/useSwapStatus';
 
 export default function Bridge() {
-  const [tip, setTip] = useState<Tip | null>(null);
-  const [error, setError] = useState<string | null>(null);
-  const [now, setNow] = useState(() => Date.now());
+  const { tip, now, current, remaining, isLive, error } = useSwapStatus();
 
-  // Tick every second so the countdown updates smoothly.
-  useEffect(() => {
-    const id = setInterval(() => setNow(Date.now()), 1000);
-    return () => clearInterval(id);
-  }, []);
-
-  // Poll the explorer for the chain tip.
-  useEffect(() => {
-    let cancelled = false;
-    let timer: ReturnType<typeof setTimeout> | null = null;
-
-    async function fetchTip() {
-      try {
-        const res = await fetch(API_URL, { cache: 'no-store' });
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const data: unknown = await res.json();
-        const height =
-          Array.isArray(data) && data.length > 0
-            ? (data[0] as { height?: unknown }).height
-            : null;
-        if (typeof height === 'number' && Number.isFinite(height)) {
-          if (!cancelled) {
-            setTip({ height, at: Date.now() });
-            setError(null);
-          }
-        } else {
-          throw new Error('Unexpected API response shape');
-        }
-      } catch (e) {
-        if (!cancelled) {
-          const msg = e instanceof Error ? e.message : 'Unknown error';
-          setError(`Could not reach explorer.navcoin.org · ${msg}`);
-        }
-      } finally {
-        if (!cancelled) {
-          timer = setTimeout(fetchTip, POLL_MS);
-        }
-      }
-    }
-
-    fetchTip();
-
-    return () => {
-      cancelled = true;
-      if (timer) clearTimeout(timer);
-    };
-  }, []);
-
-  // Interpolate the displayed height upward between polls so the counter ticks smoothly.
-  // The next successful poll snaps `tip` back to the truthful value, correcting any drift.
-  const current =
-    tip !== null ? tip.height + Math.floor((now - tip.at) / 1000 / BLOCK_TIME_SEC) : null;
-  const remaining = current !== null ? Math.max(0, TARGET_BLOCK - current) : null;
   const secsLeft = remaining !== null ? remaining * BLOCK_TIME_SEC : null;
   const eta = secsLeft !== null ? new Date(now + secsLeft * 1000) : null;
-  const isLive = remaining === 0;
   const pct = current !== null ? Math.min(100, (current / TARGET_BLOCK) * 100) : 0;
 
   const days = secsLeft !== null ? Math.floor(secsLeft / 86400) : null;

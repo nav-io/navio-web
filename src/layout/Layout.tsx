@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import GridBgMesh from './GridBgMesh';
-import MeshPulse from './MeshPulse';
+import SwapBanner from './SwapBanner';
 
 export default function Layout() {
   const { pathname } = useLocation();
@@ -25,6 +25,7 @@ export default function Layout() {
         } pt-20 sm:pt-24 pb-24`}
       >
         <GridBgMesh variant={hexagonBg ? 'hex' : 'square'} />
+        <SwapBanner />
         <Outlet />
       </main>
       <Footer />

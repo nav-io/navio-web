@@ -1,4 +1,4 @@
-import { ExternalLink, Cpu, HardDrive, Wifi, Terminal, Coins } from 'lucide-react';
+import { ExternalLink, Cpu, HardDrive, Wifi, Terminal, Coins, Download, ShieldCheck } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
 import PageBanner from '../components/PageBanner';
 
@@ -53,11 +53,68 @@ export default function Stake() {
       <section>
         <SectionHeading
           eyebrow="02 / Install"
-          title={<>Build the node</>}
+          title={<>Get the node</>}
           center={false}
           gradient="pink"
         />
-        <div className="mt-8 grid md:grid-cols-2 gap-5">
+
+        {/* SIGNED BINARIES — recommended */}
+        <div className="glow-card gradient-border mt-8">
+          <div className="flex items-start gap-4">
+            <div className="w-10 h-10 rounded-lg border border-white/10 bg-white/[0.03] flex items-center justify-center text-neon-green shrink-0">
+              <ShieldCheck className="w-5 h-5" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <div className="mono text-[10px] tracking-[0.22em] uppercase text-neon-green/80 mb-1">
+                Recommended
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">Download signed binaries</h3>
+              <p className="text-sm text-white/60 leading-relaxed mb-4">
+                Prebuilt releases for Linux and macOS, PGP-signed by the maintainers. No compiler
+                needed. Verify the signature before you run anything.
+              </p>
+              <a
+                href="https://github.com/nav-io/navio-core/releases"
+                target="_blank"
+                rel="noreferrer"
+                className="neon-btn"
+              >
+                <Download className="w-4 h-4" />
+                Latest release
+              </a>
+            </div>
+          </div>
+
+          <div className="mt-5">
+            <h4 className="mono text-[10px] tracking-[0.22em] uppercase text-neon-blue/80 mb-2">
+              Verify the download
+            </h4>
+            <pre className="mono text-[11px] text-white/70 bg-black/40 rounded-lg p-4 overflow-x-auto">
+{`# import the Navio signing key
+curl -sSL https://nav.io/releases.asc | gpg --import
+
+# check the signature on the checksums file
+gpg --verify SHA256SUMS.asc SHA256SUMS
+
+# confirm your binary matches the signed checksum
+sha256sum -c SHA256SUMS --ignore-missing`}
+            </pre>
+            <p className="text-xs text-white/50 mt-3 leading-relaxed">
+              Key also at{' '}
+              <a href="/releases.asc" className="text-neon-blue/80 hover:text-neon-blue underline-offset-4 hover:underline">
+                nav.io/releases.asc
+              </a>
+              . A <code className="mono text-neon-green">Good signature</code> line means the release
+              was built and signed by the maintainers, not tampered with in transit.
+            </p>
+          </div>
+        </div>
+
+        {/* BUILD FROM SOURCE — alternative */}
+        <div className="mono text-[10px] tracking-[0.22em] uppercase text-white/40 mt-10 mb-4">
+          Or build from source
+        </div>
+        <div className="grid md:grid-cols-2 gap-5">
           <div className="glow-card">
             <div className="mono text-[10px] tracking-[0.22em] uppercase text-neon-blue/80 mb-2">Debian / Ubuntu</div>
             <h3 className="text-base font-semibold text-white mb-3">Dependencies</h3>

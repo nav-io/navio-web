@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom';
 import {
-  Shield, Eye, Coins, Network, Lock, ArrowRight, ExternalLink,
-  Fingerprint, Layers, Zap, Cpu, GitBranch, Check, Clock,
+  ArrowRight, ExternalLink,
+  Layers, Zap, Cpu, GitBranch, Check, Clock, Download,
 } from 'lucide-react';
 import Slogan from '../components/Slogan';
 import SectionHeading from '../components/SectionHeading';
-import FeatureCard from '../components/FeatureCard';
 
 export default function Home() {
   return (
@@ -52,7 +51,16 @@ export default function Home() {
           </p>
 
           <div className="flex flex-wrap gap-3 justify-center pt-6">
-            <Link to="/technology" className="neon-btn">
+            <a
+              href="https://github.com/nav-io/navio-core/releases"
+              target="_blank"
+              rel="noreferrer"
+              className="neon-btn"
+            >
+              <Download className="w-4 h-4" />
+              Download node
+            </a>
+            <Link to="/technology" className="ghost-btn">
               Read the tech
               <ArrowRight className="w-4 h-4" />
             </Link>
@@ -64,6 +72,9 @@ export default function Home() {
               <ExternalLink className="w-3 h-3" />
             </a>
           </div>
+          <p className="mono text-[10px] tracking-[0.2em] uppercase text-white/35">
+            Signed release binaries
+          </p>
         </div>
       </section>
 
