@@ -229,7 +229,7 @@ sudo make install  # optional`}
       <section>
         <SectionHeading
           eyebrow="04 / Cold staking"
-          title={<>No server? Delegate your stake</>}
+          title={<>The most secure way to stake</>}
           center={false}
           gradient="blue"
         />
@@ -240,37 +240,40 @@ sudo make install  # optional`}
             </div>
             <div className="flex-1 min-w-0">
               <h3 className="text-lg font-semibold text-white mb-2">
-                Stake from your wallet, blocks produced by an operator
+                Staking key hot, spending key cold
               </h3>
               <p className="text-sm text-white/60 leading-relaxed mb-4">
-                Cold staking lets a staking operator produce blocks with your coins while the
-                coins never leave your wallet: the operator receives a delegation key, not spend
-                authority. They can never spend or unstake your NAV, and you can unstake at any
-                time. Reward routing to an address of your choice is supported.
+                Cold staking splits the two authorities: the machine producing blocks holds only a
+                delegation key, while spend authority stays in your wallet — which can stay
+                offline. If the staking box is ever compromised, the attacker gets block
+                production, not your coins. Only your spend key can move or unstake the principal.
               </p>
               <p className="text-sm text-white/60 leading-relaxed mb-4">
-                The easiest way is Navio Electrum: open <span className="mono text-neon-blue">Wallet&nbsp;&gt;&nbsp;Staking</span>,
-                choose <span className="mono text-neon-blue">Stake…</span>, and paste the operator
-                delegation key published by your staking provider. Works on desktop and Android.
+                Run it either way: generate a delegation key on <span className="mono text-neon-blue">your own server</span>{' '}
+                and delegate your stake to yourself — hardened validator, keys never co-located — or
+                delegate to a third-party operator if you don't want to run hardware. Either way,
+                delegate from Navio Electrum (<span className="mono text-neon-blue">Wallet&nbsp;&gt;&nbsp;Staking&nbsp;&gt;&nbsp;Stake…</span>,
+                paste the delegation key) or with <span className="mono text-neon-blue">navio-cli delegatestake</span>.
+                Revoke or re-delegate any time.
               </p>
               <div className="flex flex-wrap gap-3">
-                <a
-                  href="https://github.com/nav-io/navio-electrum/releases/latest"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="neon-btn"
-                >
-                  <Wallet className="w-4 h-4" />
-                  Get Navio Electrum
-                </a>
                 <a
                   href="https://docs.nav.io/node/cold-staking/"
                   target="_blank"
                   rel="noreferrer"
-                  className="ghost-btn"
+                  className="neon-btn"
                 >
                   Cold staking docs
                   <ExternalLink className="w-3 h-3" />
+                </a>
+                <a
+                  href="https://github.com/nav-io/navio-electrum/releases/latest"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="ghost-btn"
+                >
+                  <Wallet className="w-4 h-4" />
+                  Get Navio Electrum
                 </a>
               </div>
             </div>
@@ -334,7 +337,7 @@ sudo make install  # optional`}
         <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
           <a href="https://docs.nav.io/node/cold-staking/" target="_blank" rel="noreferrer" className="glow-card group">
             <h3 className="text-base font-semibold text-white mb-2">Cold staking</h3>
-            <p className="text-sm text-white/60 leading-relaxed">Delegation keys, operator setup, reward routing — stake without running a server.</p>
+            <p className="text-sm text-white/60 leading-relaxed">Staking key hot, spend key cold. Self-operated or delegated: delegation keys, operator setup, reward routing.</p>
             <div className="mono text-[10px] tracking-[0.2em] uppercase text-neon-blue/70 mt-4 flex items-center gap-1">
               docs.nav.io/node/cold-staking <ExternalLink className="w-3 h-3" />
             </div>
