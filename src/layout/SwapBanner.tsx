@@ -11,7 +11,7 @@ export default function SwapBanner() {
   if (!isLive) return null;
 
   return (
-    <div className="max-w-5xl mx-auto px-4 -mt-8 sm:-mt-10 mb-4">
+    <div className="max-w-5xl mx-auto px-4 pt-2 sm:pt-3 mb-6">
       <a
         href="https://bridge.nav.io"
         target="_blank"
