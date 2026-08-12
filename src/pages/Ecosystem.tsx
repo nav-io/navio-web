@@ -34,6 +34,15 @@ export default function Ecosystem() {
           />
           <div className="mt-10 grid md:grid-cols-2 gap-5">
             <WalletCard
+              name="Navio Electrum"
+              desc="Light wallet for Windows, macOS, Linux and Android. Send and receive private NAV without a full node, stake and cold-stake, create watch-only wallets from a view key."
+              tags={['Desktop', 'Android', 'Staking', 'Light client']}
+              links={[
+                { label: 'Downloads', href: 'https://github.com/nav-io/navio-electrum/releases/latest' },
+                { label: 'Source', href: 'https://github.com/nav-io/navio-electrum', icon: true },
+              ]}
+            />
+            <WalletCard
               name="Navio Core"
               desc="The reference wallet. Bundled with the full node. Full BLSCT support, CLI-first, ideal for stakers, developers and anyone who wants to run their own stack."
               tags={['CLI', 'Full node', 'BLSCT']}
@@ -179,6 +188,10 @@ const REPOS = [
   {
     name: 'navio-core', url: 'https://github.com/nav-io/navio-core',
     desc: 'C++ full node, wallet, staker. The canonical implementation.'
+  },
+  {
+    name: 'navio-electrum', url: 'https://github.com/nav-io/navio-electrum',
+    desc: 'Light wallet for desktop and Android. Staking, cold staking, watch-only.'
   },
   {
     name: 'navio-sdk', url: 'https://github.com/nav-io/navio-sdk',
