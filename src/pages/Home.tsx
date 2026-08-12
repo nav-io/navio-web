@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import {
   ArrowRight, ExternalLink,
-  Layers, Zap, Cpu, GitBranch, Check, Clock, Download,
+  Layers, Zap, Cpu, GitBranch, Check, Clock, Download, Wallet,
 } from 'lucide-react';
 import Slogan from '../components/Slogan';
 import SectionHeading from '../components/SectionHeading';
@@ -52,10 +52,19 @@ export default function Home() {
 
           <div className="flex flex-wrap gap-3 justify-center pt-6">
             <a
-              href="https://github.com/nav-io/navio-core/releases"
+              href="https://github.com/nav-io/navio-electrum/releases/latest"
               target="_blank"
               rel="noreferrer"
               className="neon-btn"
+            >
+              <Wallet className="w-4 h-4" />
+              Download wallet
+            </a>
+            <a
+              href="https://github.com/nav-io/navio-core/releases"
+              target="_blank"
+              rel="noreferrer"
+              className="ghost-btn"
             >
               <Download className="w-4 h-4" />
               Download node
@@ -243,7 +252,13 @@ export default function Home() {
           title={<>Live on the network today</>}
           subtitle="Explore the chain, bridge in and build on top."
         />
-        <div className="mt-12 grid md:grid-cols-3 gap-5">
+        <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <AppCard
+            title="Navio Electrum Wallet"
+            url="https://github.com/nav-io/navio-electrum/releases/latest"
+            desc="Light wallet for Windows, macOS, Linux and Android. Send and receive private NAV, stake and cold-stake, no full node required."
+            icon={<Wallet className="w-5 h-5" />}
+          />
           <AppCard
             title="Block Explorer"
             url="https://blocks.nav.io"

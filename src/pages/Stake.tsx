@@ -1,4 +1,4 @@
-import { ExternalLink, Cpu, HardDrive, Wifi, Terminal, Coins, Download, ShieldCheck } from 'lucide-react';
+import { ExternalLink, Cpu, HardDrive, Wifi, Terminal, Coins, Download, ShieldCheck, Snowflake, Wallet } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
 import PageBanner from '../components/PageBanner';
 
@@ -225,10 +225,63 @@ sudo make install  # optional`}
         </div>
       </section>
 
+      {/* COLD STAKING */}
+      <section>
+        <SectionHeading
+          eyebrow="04 / Cold staking"
+          title={<>No server? Delegate your stake</>}
+          center={false}
+          gradient="blue"
+        />
+        <div className="glow-card gradient-border mt-8">
+          <div className="flex items-start gap-4">
+            <div className="w-10 h-10 rounded-lg border border-white/10 bg-white/[0.03] flex items-center justify-center text-neon-blue shrink-0">
+              <Snowflake className="w-5 h-5" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <h3 className="text-lg font-semibold text-white mb-2">
+                Stake from your wallet, blocks produced by an operator
+              </h3>
+              <p className="text-sm text-white/60 leading-relaxed mb-4">
+                Cold staking lets a staking operator produce blocks with your coins while the
+                coins never leave your wallet: the operator receives a delegation key, not spend
+                authority. They can never spend or unstake your NAV, and you can unstake at any
+                time. Reward routing to an address of your choice is supported.
+              </p>
+              <p className="text-sm text-white/60 leading-relaxed mb-4">
+                The easiest way is Navio Electrum: open <span className="mono text-neon-blue">Wallet&nbsp;&gt;&nbsp;Staking</span>,
+                choose <span className="mono text-neon-blue">Stake…</span>, and paste the operator
+                delegation key published by your staking provider. Works on desktop and Android.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="https://github.com/nav-io/navio-electrum/releases/latest"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="neon-btn"
+                >
+                  <Wallet className="w-4 h-4" />
+                  Get Navio Electrum
+                </a>
+                <a
+                  href="https://docs.nav.io/node/cold-staking/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="ghost-btn"
+                >
+                  Cold staking docs
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* REWARDS */}
       <section>
         <SectionHeading
-          eyebrow="04 / Rewards"
+          eyebrow="05 / Rewards"
           title={<>What you earn</>}
           center={false}
           gradient="pink"
@@ -273,12 +326,19 @@ sudo make install  # optional`}
       {/* RESOURCES */}
       <section>
         <SectionHeading
-          eyebrow="05 / Resources"
+          eyebrow="06 / Resources"
           title={<>Where to go next</>}
           center={false}
           gradient="blue"
         />
-        <div className="mt-8 grid md:grid-cols-3 gap-5">
+        <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <a href="https://docs.nav.io/node/cold-staking/" target="_blank" rel="noreferrer" className="glow-card group">
+            <h3 className="text-base font-semibold text-white mb-2">Cold staking</h3>
+            <p className="text-sm text-white/60 leading-relaxed">Delegation keys, operator setup, reward routing — stake without running a server.</p>
+            <div className="mono text-[10px] tracking-[0.2em] uppercase text-neon-blue/70 mt-4 flex items-center gap-1">
+              docs.nav.io/node/cold-staking <ExternalLink className="w-3 h-3" />
+            </div>
+          </a>
           <a href="https://docs.nav.io/node/install" target="_blank" rel="noreferrer" className="glow-card group">
             <h3 className="text-base font-semibold text-white mb-2">Install guide</h3>
             <p className="text-sm text-white/60 leading-relaxed">Full install walkthrough. Docker, release binaries, source.</p>
