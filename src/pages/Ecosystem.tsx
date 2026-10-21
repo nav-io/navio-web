@@ -43,6 +43,15 @@ export default function Ecosystem() {
               ]}
             />
             <WalletCard
+              name="Navio Go"
+              desc="Light wallet that runs in your browser and on your phone. No node to sync. Trade NAV directly from the wallet and earn with cold staking: your coins keep staking while your keys stay offline."
+              tags={['Light wallet', 'Android', 'iOS (PWA)', 'Merchant POS', 'Trade', 'Cold staking']}
+              links={[
+                { label: 'Website', href: 'https://go.nav.io' },
+                { label: 'Source', href: 'https://github.com/navio-x/navio-go', icon: true },
+              ]}
+            />
+            <WalletCard
               name="Navio Core"
               desc="The reference wallet. Bundled with the full node. Full BLSCT support, CLI-first, ideal for stakers, developers and anyone who wants to run their own stack."
               tags={['CLI', 'Full node', 'BLSCT']}
@@ -54,7 +63,7 @@ export default function Ecosystem() {
             <WalletCard
               name="Navio X"
               desc="Cross-platform desktop wallet. Electron app, tighter UX for everyday users. Available on macOS, Windows and Linux."
-              tags={['Desktop', 'Electron', 'Beta']}
+              tags={['Desktop', 'Electron']}
               links={[
                 { label: 'Website', href: 'https://navio-x.github.io/' },
                 { label: 'Source', href: 'https://github.com/navio-x/navio-x', icon: true },
@@ -133,7 +142,7 @@ export default function Ecosystem() {
           />
           <div className="mt-10 grid md:grid-cols-3 gap-5">
             <Step n="01" title="Create a wallet">
-              Generate a Navio wallet using Navio Core, Navio X or the SDK. Capture your receive
+              Generate a Navio wallet using Navio Core, Navio X, Navio Electrum, Navio Go or the SDK. Capture your receive
               address. You'll paste it into the bridge.
             </Step>
             <Step n="02" title="Bridge in">
@@ -192,6 +201,10 @@ const REPOS = [
   {
     name: 'navio-electrum', url: 'https://github.com/nav-io/navio-electrum',
     desc: 'Light wallet for desktop and Android. Staking, cold staking, watch-only.'
+  },
+  {
+    name: 'navio-go', url: 'https://github.com/navio-x/navio-go',
+    desc: 'Light wallet for browser, Android and iOS. Trade, cold staking, merchant POS.'
   },
   {
     name: 'navio-sdk', url: 'https://github.com/nav-io/navio-sdk',
